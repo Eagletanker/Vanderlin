@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/invoked/poisonspray5e
-	name = "Poison Cloud" //renamed to better reflect wtf this does -- vide
-	desc = "Hold a container in your hand, it's contents turn into a 3-radius smoke"
+	name = "Aresolize" //renamed to better reflect wtf this does -- vide
+	desc = "Hold a container in your hand, it's contents turn intoing a cloud covering a three by three square."
 	overlay_state = "null"
 	releasedrain = 50
 	chargetime = 3
@@ -18,14 +18,9 @@
 	associated_skill = /datum/skill/magic/arcane //can be arcane, druidic, blood, holy
 	cost = 1
 
-	attunements = list(
-		/datum/attunement/blood = 0.3,
-		/datum/attunement/death = 0.3,
-	)
-
 	miracle = FALSE
 
-	invocation = "Poison Cloud!"
+	invocation = "Evaporate!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 
 /obj/effect/proc_holder/spell/invoked/poisonspray5e/cast(list/targets, mob/living/user)

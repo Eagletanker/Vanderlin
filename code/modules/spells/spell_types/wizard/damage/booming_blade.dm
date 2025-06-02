@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/invoked/boomingblade5e
 	name = "Booming Blade"
-	desc = "Causes explosions to ripple out from your target when they move."
+	desc = "A spell which uses a weapon as a focus. Causes the target to endure a blinding explosion upon movement."
 	overlay_state = "blade_burst"
 	releasedrain = 50
 	chargetime = 3
@@ -23,9 +23,6 @@
 	invocation = "Stay still!" // Incantation should explain a confusing spell's mechanic.
 	invocation_type = "shout" //can be none, whisper, emote and shout
 
-	attunements = list(
-		/datum/attunement/earth = 0.3,
-	)
 
 /obj/effect/proc_holder/spell/invoked/boomingblade5e/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))

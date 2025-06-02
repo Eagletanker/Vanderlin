@@ -18,10 +18,7 @@
 	associated_skill = /datum/skill/magic/arcane
 	sparks_spread = 3
 	sparks_amt = 5
-	cost = 3
-	attunements = list(
-		/datum/attunement/electric = 0.5,
-	)
+	cost = 6
 
 /obj/projectile/magic/lightning
 	name = "bolt of lightning"

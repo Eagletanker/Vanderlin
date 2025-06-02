@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/invoked/greenflameblade5e
 	name = "Green-Flame Blade"
-	desc = "An attack that burns all in an aoe around your target."
+	desc = "A spell which uses a weapon as it's focus to scorch your target briefly."
 	overlay_state = "null"
 	releasedrain = 50
 	chargetime = 3
@@ -21,10 +21,6 @@
 
 	invocation = "Green flame blade!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
-
-	attunements = list(
-		/datum/attunement/fire = 0.3,
-	)
 
 /obj/effect/proc_holder/spell/invoked/greenflameblade5e/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
