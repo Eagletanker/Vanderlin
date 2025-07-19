@@ -17,10 +17,6 @@
 	item_duration = 3 MINUTES
 	item_outline = "#6495ED"
 
-	attunements = list(
-		/datum/attunement/earth = 0.3,
-	)
-
 /datum/action/cooldown/spell/undirected/conjure_item/brick/make_item()
 	. = ..()
 	if(!isliving(owner))
@@ -31,8 +27,8 @@
 		return
 	var/obj/item/brick = .
 	var/int_scaling = INT - 10
-	brick.force = (brick.force + int_scaling) * attuned_strength
-	brick.throwforce = (brick.throwforce + int_scaling * 2) * attuned_strength // 2x scaling for throwing. Let's go.
+	brick.force = (brick.force + int_scaling)
+	brick.throwforce = (brick.throwforce + int_scaling * 2) // 2x scaling for throwing. Let's go.
 	brick.name = "magician's brick +[int_scaling]"
 	return brick
 
@@ -53,5 +49,5 @@
 	obj_flags = null
 	w_class = WEIGHT_CLASS_TINY
 	possible_item_intents = list(/datum/intent/mace/strike) // Not giving it smash so it don't become competetive with conjure weapon (as a melee weapon)
-	associated_skill = /datum/skill/combat/axesmaces // If it was tied to Arcane it'd be too strong
+	associated_skill = /datum/skill/combat/acryne // fuck it lets see how it is live
 	hitsound = list('sound/combat/hits/blunt/brick.ogg')

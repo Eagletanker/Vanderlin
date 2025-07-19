@@ -6,9 +6,6 @@
 	sound = 'sound/magic/unmagnet.ogg'
 
 	point_cost = 3
-	attunements = list(
-		/datum/attunement/aeromancy = 0.4,
-	)
 
 	charge_time = 3 SECONDS
 	charge_drain = 2

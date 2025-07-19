@@ -1,20 +1,16 @@
 /datum/action/cooldown/spell/aoe/on_turf/arcyne_storm
-	name = "Arcyne storm"
-	desc = "Conjure ripples of force into existance over a large area, injuring any who enter."
+	name = "Storm of Steel"
+	desc = "Conjure ripples of force into existance over a large area, injuring any who enter for a long time."
 	button_icon_state = "hierophant"
 
 	point_cost = 8
 
-	charge_time = 4 SECONDS
+	charge_time = 7 SECONDS
 	charge_drain = 1
 	cooldown_time = 50 SECONDS
 	spell_cost = 40
 
-	aoe_radius = 4
-
-	attunements = list(
-		/datum/attunement/arcyne = 1.2
-	)
+	aoe_radius = 2
 
 /datum/action/cooldown/spell/aoe/on_turf/arcyne_storm/cast_on_thing_in_aoe(atom/victim, atom/caster)
 	for(var/i in 1 to 16)
@@ -24,7 +20,7 @@
 	new /obj/effect/temp_visual/arcyne_storm(victim)
 	playsound(victim, "genslash", 40, TRUE)
 	for(var/mob/living/L in victim.contents)
-		L.adjustBruteLoss(round(10 * attuned_strength))
+		L.adjustBruteLoss(round(10))
 		to_chat(L, span_userdanger("I'm cut by an arcyne force!"))
 
 /obj/effect/temp_visual/arcyne_storm

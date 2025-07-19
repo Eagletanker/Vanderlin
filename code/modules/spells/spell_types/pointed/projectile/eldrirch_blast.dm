@@ -5,11 +5,8 @@
 	sound = 'sound/magic/whiteflame.ogg'
 
 	point_cost = 1
-	attunements = list(
-		/datum/attunement/dark = 0.3,
-	)
 
-	invocation = "Eldritch blast!"
+	invocation = ""
 	invocation_type = INVOCATION_SHOUT
 
 	charge_time = 1 SECONDS

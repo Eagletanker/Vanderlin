@@ -6,9 +6,6 @@
 
 	sound = 'sound/magic/whiteflame.ogg'
 	point_cost = 1
-	attunements = list(
-		/datum/attunement/ice = 0.9
-	)
 
 	charge_time = 3 SECONDS
 	charge_drain = 1
@@ -19,7 +16,6 @@
 
 /datum/action/cooldown/spell/status/frostbite/cast(mob/living/cast_on)
 	. = ..()
-	extra_args = list(attuned_strength)
 	if(iscarbon(cast_on))
 		var/mob/living/carbon/C = cast_on
-		C.adjustFireLoss(15 * attuned_strength)
+		C.adjustFireLoss(15)

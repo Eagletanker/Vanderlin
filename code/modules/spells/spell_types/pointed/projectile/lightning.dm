@@ -7,7 +7,7 @@
 	sparks_amt = 5
 
 	cast_range = 8
-	point_cost = 3
+	point_cost = 5
 	attunements = list(
 		/datum/attunement/electric = 0.7,
 	)

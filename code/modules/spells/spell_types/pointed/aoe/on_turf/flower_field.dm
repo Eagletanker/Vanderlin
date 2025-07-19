@@ -1,6 +1,6 @@
 /datum/action/cooldown/spell/aoe/on_turf/circle/flower_field
 	name = "Flower Field"
-	desc = "Summons a magical field of flowers using a single flower."
+	desc = "Summons a magical field of flowers using a single flower." //more alchemy focused. Move to it?
 	button_icon_state = "flower_field"
 
 	point_cost = 4

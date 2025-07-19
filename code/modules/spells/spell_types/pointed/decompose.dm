@@ -1,4 +1,4 @@
-// TODO touch spell?
+// TODO touch spell? Pestran shit.
 /datum/action/cooldown/spell/decompose
 	name = "Decompose"
 	desc = "Instantly rots the target, if humanoid creates a deadite."

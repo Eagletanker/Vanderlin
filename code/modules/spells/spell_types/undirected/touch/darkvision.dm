@@ -5,9 +5,6 @@
 	can_cast_on_self = TRUE
 
 	point_cost = 2
-	attunements = list(
-		/datum/attunement/light = 0.6,
-	)
 
 	cooldown_time = 6 MINUTES
 

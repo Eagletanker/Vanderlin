@@ -3,11 +3,6 @@
 	desc = "Shoots a ray of frost out, slowing anyone hit by it."
 	button_icon_state = "rayoffrost"
 
-	point_cost = 3
-	attunements = list(
-		/datum/attunement/ice = 0.6,
-	)
-
 	charge_time = 2.5 SECONDS
 	charge_drain = 1
 	cooldown_time = 20 SECONDS

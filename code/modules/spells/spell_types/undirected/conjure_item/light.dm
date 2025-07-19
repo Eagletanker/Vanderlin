@@ -6,19 +6,15 @@
 
 	point_cost = 1
 
-	cooldown_time = 30 SECONDS
+	cooldown_time = 5 MINUTES //one per cast
 	spell_cost = 50
 
-	invocation = "Let there be light."
+	invocation = ""
 	invocation_type = INVOCATION_WHISPER
 
 	delete_old = TRUE
 	item_type = /obj/item/flashlight/flare/light
 	item_duration = null
-
-	attunements = list(
-		/datum/attunement/light = 0.3,
-	)
 
 /datum/action/cooldown/spell/undirected/conjure_item/light/make_item()
 	var/obj/item = ..()
@@ -42,8 +38,8 @@
 	flags_1 = null
 	possible_item_intents = list(/datum/intent/use)
 	slot_flags = ITEM_SLOT_HIP
-	max_integrity = 200
-	fuel = 10 MINUTES
+	max_integrity = 50
+	fuel = 5 MINUTES
 	light_depth = 0
 	light_height = 0
 

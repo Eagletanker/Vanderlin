@@ -9,12 +9,8 @@
 	cooldown_time = 1 MINUTES
 	spell_cost = 30
 
-	invocation = "Blades, be dulled!"
+	invocation = ""
 	invocation_type = INVOCATION_SHOUT
-
-	attunements = list(
-		/datum/attunement/arcyne = 0.3,
-	)
 
 /datum/action/cooldown/spell/undirected/blade_ward/cast(atom/cast_on)
 	. = ..()

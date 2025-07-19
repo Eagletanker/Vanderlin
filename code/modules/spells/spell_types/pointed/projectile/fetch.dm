@@ -5,10 +5,7 @@
 	cast_range = 15
 	sound = 'sound/magic/magnet.ogg'
 
-	point_cost = 2
-	attunements = list(
-		/datum/attunement/aeromancy = 0.4,
-	)
+	point_cost = 3 //its uh. very good.
 
 	charge_time = 1.5 SECONDS
 	charge_drain = 2

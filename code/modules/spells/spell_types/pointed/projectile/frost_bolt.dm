@@ -4,10 +4,7 @@
 	button_icon = "frostbolt"
 	sound = 'sound/magic/whiteflame.ogg'
 
-	point_cost = 1
-	attunements = list(
-		/datum/attunement/ice = 0.7,
-	)
+	point_cost = 3
 
 	charge_time = 2 SECONDS
 	charge_drain = 1
@@ -30,7 +27,7 @@
 	icon_state = "ice_2"
 	damage = 25
 	damage_type = BURN
-	range = 10
+	range = 12
 	speed = 1
 
 /obj/projectile/magic/frostbolt/on_hit(atom/target, blocked = FALSE, pierce_hit)

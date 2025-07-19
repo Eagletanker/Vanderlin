@@ -5,10 +5,7 @@
 	charge_sound = 'sound/magic/charging_fire.ogg'
 
 	cast_range = 8
-	point_cost = 4
-	attunements = list(
-		/datum/attunement/fire = 0.5
-	)
+	point_cost = 5
 
 	charge_time = 2.5 SECONDS
 	charge_drain = 1
@@ -18,17 +15,11 @@
 
 	projectile_type = /obj/projectile/magic/aoe/fireball/rogue
 
-/datum/action/cooldown/spell/projectile/fireball/ready_projectile(obj/projectile/magic/aoe/fireball/to_fire, atom/target, mob/user, iteration)
-	. = ..()
-	to_fire.damage *= attuned_strength
-	to_fire.exp_light *= attuned_strength
-	to_fire.exp_fire *= attuned_strength
-
 /obj/projectile/magic/aoe/fireball/rogue
 	name = "fireball"
 	exp_heavy = 0
-	exp_light = 3
-	exp_flash = 0
+	exp_light = 1
+	exp_flash = 2
 	exp_fire = 3
 	damage = 10
 	damage_type = BURN
@@ -38,20 +29,17 @@
 	aoe_range = 0
 	speed = 3
 
-/datum/action/cooldown/spell/projectile/fireball/greater
+/datum/action/cooldown/spell/projectile/fireball/greater //balancing around it being DND's fireball
 	name = "Fireball (Greater)"
 	desc = "Shoot out an immense ball of fire that explodes on impact."
 	button_icon_state = "fireball_greater"
 
-	point_cost = 6
-	attunements = list(
-		/datum/attunement/fire = 1.1,
-	)
+	point_cost = 8
 
 	charge_time = 4 SECONDS
 	charge_drain = 2
 	charge_slowdown = 1.3
-	cooldown_time = 35 SECONDS
+	cooldown_time = 45 SECONDS
 	spell_cost = 50
 
 	projectile_type = /obj/projectile/magic/aoe/fireball/rogue/great
@@ -60,8 +48,8 @@
 	name = "fireball"
 	exp_devi = 0
 	exp_heavy = 1
-	exp_light = 5
-	exp_flash = 0
-	exp_fire = 4
+	exp_light =2
+	exp_flash = 4
+	exp_fire = 3
 	exp_hotspot = 0
-	speed = 6
+	speed = 3

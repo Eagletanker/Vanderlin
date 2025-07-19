@@ -4,13 +4,9 @@
 	button_icon_state = "snapfreeze"
 
 	point_cost = 2
-	attunements = list(
-		/datum/attunement/blood = 0.3,
-		/datum/attunement/ice = 0.4,
-	)
 
-	invocation = "Air be still!"
-	invocation_type = INVOCATION_SHOUT
+	invocation = "[user] snaps their fingers, cold racing through the room!"
+	invocation_type = INVOCATION_EMOTE
 
 	charge_time = 3 SECONDS
 	charge_drain = 2

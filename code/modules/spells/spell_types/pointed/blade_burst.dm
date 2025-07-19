@@ -4,16 +4,14 @@
 	button_icon_state = "blade_burst"
 	self_cast_possible = FALSE
 
-	point_cost = 2
-	attunements = list(
-		/datum/attunement/earth = 0.5,
-	)
+	point_cost = 3
 
 	charge_time = 2 SECONDS
 	charge_drain = 1
 	charge_slowdown = 0.7
 	cooldown_time = 20 SECONDS
 	spell_cost = 30
+	aoe_radius = 1
 
 /datum/action/cooldown/spell/blade_burst/cast(atom/cast_on)
 	. = ..()

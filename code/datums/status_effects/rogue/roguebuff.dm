@@ -253,6 +253,12 @@
 	effectedstats = list(STATKEY_SPD = 3)
 	duration = 1 MINUTES
 
+/datum/status_effect/buff/acrynehaste
+	id = "acrynehaste"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/haste
+	effectedstats = list(STATKEY_SPD = 5)
+	duration = 45 SECONDS
+
 /datum/status_effect/buff/calm
 	id = "calm"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/calm

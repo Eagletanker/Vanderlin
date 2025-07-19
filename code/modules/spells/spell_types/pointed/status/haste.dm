@@ -2,12 +2,9 @@
 	name = "Haste"
 	desc = "Cause a target to be magically hastened."
 	button_icon_state = "haste"
-	point_cost = 2
+	point_cost = 3
 	sound = 'sound/magic/haste.ogg'
 
-	attunements = list(
-		/datum/attunement/aeromancy = 0.5,
-	)
 	school = SCHOOL_TRANSMUTATION
 
 	charge_time = 2 SECONDS
@@ -15,7 +12,7 @@
 	cooldown_time = 3 MINUTES
 	spell_cost = 40
 
-	status_effect = /datum/status_effect/buff/haste
+	status_effect = /datum/status_effect/buff/acrynehaste
 	duration_scaling = TRUE
 	duration_modification = 30 SECONDS
 

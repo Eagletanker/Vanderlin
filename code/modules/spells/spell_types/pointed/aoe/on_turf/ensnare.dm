@@ -3,10 +3,6 @@
 	desc = "Tendrils of arcyne force will hold all in an area in place, for a time."
 	button_icon_state = "ensnare"
 	point_cost = 3
-	attunements = list(
-		/datum/attunement/time = 0.3,
-		/datum/attunement/arcyne = 0.4,
-	)
 
 	charge_time = 2 SECONDS
 	charge_drain = 2
@@ -15,9 +11,9 @@
 
 	aoe_radius = 4
 
-	var/duration = 4 SECONDS
+	var/duration = 6 SECONDS //a bit more effective than what it was before
 	var/delay = 0.8 SECONDS
-	var/ensnare_radius = 1
+	var/ensnare_radius = 2
 
 /datum/action/cooldown/spell/aoe/on_turf/ensnare/cast_on_thing_in_aoe(turf/victim)
 	new /obj/effect/temp_visual/slowdown_spell_aoe(victim)

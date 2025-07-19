@@ -5,10 +5,7 @@
 	sound = 'sound/magic/gravity.ogg'
 	self_cast_possible = FALSE
 
-	point_cost = 2
-	attunements = list(
-		/datum/attunement/dark = 0.6,
-	)
+	point_cost = 3
 
 	charge_time = 2 SECONDS
 	cooldown_time = 25 SECONDS

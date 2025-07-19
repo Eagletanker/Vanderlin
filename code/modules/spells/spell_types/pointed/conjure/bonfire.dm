@@ -12,9 +12,9 @@
 	cooldown_time = 30 SECONDS
 	spell_cost = 30
 
-	invocation = "Bonfire!"
+	invocation = "Falent en stal!"
 	invocation_type = INVOCATION_SHOUT
 
 	summon_type = list(/obj/machinery/light/fueled/firebowl/church/magic)
 	summon_radius = 0
-	summon_lifespan = 30 SECONDS
+	summon_lifespan = 180 SECONDS

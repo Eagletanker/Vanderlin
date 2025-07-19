@@ -5,9 +5,6 @@
 	sound = 'sound/magic/vlightning.ogg'
 
 	associated_skill = /datum/skill/magic/blood
-	attunements = list(
-		/datum/attunement/blood = 0.7,
-	)
 
 	charge_time = 3 SECONDS
 	charge_drain = 1

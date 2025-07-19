@@ -9,7 +9,7 @@
 	)
 	school = SCHOOL_TRANSMUTATION
 
-	invocation = "Walk unopposed."
+	invocation = ""
 	invocation_type = INVOCATION_WHISPER
 
 	charge_time = 4 SECONDS

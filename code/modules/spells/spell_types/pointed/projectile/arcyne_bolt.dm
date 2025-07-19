@@ -1,16 +1,13 @@
-/datum/action/cooldown/spell/projectile/arcyne_bolt
+/datum/action/cooldown/spell/projectile/arcyne_bolt //Similar to the Azure Peak acryne bolt
 	name = "Arcyne Bolt"
-	desc = "Shoot out rapid bolts of arcyne power."
+	desc = "Shoot out rapid bolts of arcyne power. Damage is increased against NPCs by 50%"
 	button_icon_state =  "arcane_bolt"
 	sound = 'sound/magic/vlightning.ogg'
 
-	cast_range = 12
+	cast_range = 15
 	point_cost = 2
-	attunements = list(
-		/datum/attunement/arcyne = 0.7,
-	)
 
-	charge_time = 1 SECONDS
+	charge_time = 0 SECONDS //shoots when you tap! This is *the* basic combat spell
 	charge_drain = 1
 	charge_slowdown = 1.3
 	cooldown_time = 5 SECONDS
@@ -18,18 +15,15 @@
 
 	projectile_type = /obj/projectile/magic/energy/rogue3
 
-/datum/action/cooldown/spell/projectile/arcyne_bolt/ready_projectile(obj/projectile/to_fire, atom/target, mob/user, iteration)
-	. = ..()
-	to_fire.damage *= attuned_strength
-	to_fire.armor_penetration *= attuned_strength
-
 /obj/projectile/magic/energy/rogue3
 	name = "arcyne bolt"
 	icon_state = "arcane_barrage"
-	damage = 30
+	damage = 45
 	damage_type = BRUTE
-	armor_penetration = 10
+	armor_penetration = 5
+	npc_damage_mult = 1.5
 	nodamage = FALSE
+	hitsound = 'sound/combat/hits/blunt/shovel_hit2.ogg'
 	flag = "piercing"
-	speed = 2
-	spread = 4
+	speed = 1
+	spread = 2
