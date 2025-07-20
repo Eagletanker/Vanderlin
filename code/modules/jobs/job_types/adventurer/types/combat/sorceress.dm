@@ -1,44 +1,39 @@
-/datum/advclass/combat/mage
-	name = "Mage"
-	tutorial = "Either a apprentice studing under a wizard or an ambitious autodidact, you have finally set out to Vanderlin to gain more knowledge. You seek adventure, using your arcyne knowledge to aid others in need."
-	allowed_sexes = list(MALE)
+/datum/advclass/combat/sorceress
+	name = "Sorceress"
+	tutorial = "In some places in Psydonia, women such as you are banned from the study of magic. However, in having overcome such discrimination to pursue magic, you have earned the title \"Sorceress\" in honor of your resolve."
+	allowed_sexes = list(FEMALE)
 
-	outfit = /datum/outfit/job/adventurer/mage
-	category_tags = list(CTAG_ADVENTURER)
-	min_pq = 0
+	outfit = /datum/outfit/job/adventurer/sorceress
 	maximum_possible_slots = 2
+	min_pq = 0
+	category_tags = list(CTAG_ADVENTURER)
 	cmode_music = 'sound/music/cmode/adventurer/CombatSorcerer.ogg'
 
-/datum/outfit/job/adventurer/mage
+/datum/outfit/job/adventurer/sorceress
 	allowed_patrons = list(/datum/patron/divine/noc, /datum/patron/inhumen/zizo)
 
-/datum/outfit/job/adventurer/mage/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/adventurer/sorceress/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mana_pool?.set_intrinsic_recharge(MANA_ALL_LEYLINES)
-	head = /obj/item/clothing/head/roguehood/mage
 	shoes = /obj/item/clothing/shoes/simpleshoes
 	armor = /obj/item/clothing/shirt/robe/mage
 	belt = /obj/item/storage/belt/leather/rope
 	backr = /obj/item/storage/backpack/satchel
 	beltr = /obj/item/storage/magebag/poor
 	beltl = /obj/item/reagent_containers/glass/bottle/manapot
-	backpack_contents = list(/obj/item/book/granter/spellbook/apprentice = 1, /obj/item/chalk = 1)
 	r_hand = /obj/item/weapon/polearm/woodstaff
+	backpack_contents = list(/obj/item/book/granter/spellbook/apprentice = 1, /obj/item/chalk = 1)
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
 		H.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		if(H.age == AGE_OLD)
-			head = /obj/item/clothing/head/wizhat/gen
-			armor = /obj/item/clothing/shirt/robe/plain
-			backl = /obj/item/storage/backpack/backpack
-			H.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
-			H.change_stat(STATKEY_INT, 1)
-		H.change_stat(STATKEY_STR, -2)
+			H.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
+		H.change_stat(STATKEY_STR, -1)
 		H.change_stat(STATKEY_INT, 3)
-		H.change_stat(STATKEY_CON, -2)
+		H.change_stat(STATKEY_CON, -1)
 		H.change_stat(STATKEY_END, -1)
 		H.change_stat(STATKEY_SPD, -2)
 		H.adjust_spellpoints(5)
