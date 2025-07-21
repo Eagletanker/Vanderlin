@@ -43,4 +43,4 @@
 		H.change_stat(STATKEY_SPD, -2)
 		H.adjust_spellpoints(5)
 		H.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation)
-		ADD_TRAIT(H, TRAIT_BACHLORS_OF_ARCYNE, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_BACHLOR, TRAIT_GENERIC)

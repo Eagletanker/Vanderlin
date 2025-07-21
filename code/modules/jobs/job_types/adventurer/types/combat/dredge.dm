@@ -483,7 +483,7 @@
 			H.change_stat(STATKEY_CON, -2)
 			H.change_stat(STATKEY_SPD, -2)
 			H.adjust_spellpoints(6)
-			ADD_TRAIT(H, TRAIT_BACHLORS_OF_ARCYNE, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_BACHLOR, TRAIT_GENERIC)
 			H.cmode_music = 'sound/music/cmode/adventurer/CombatSorcerer.ogg'
 			to_chat(H,span_info("\
 			I've studied the arcane, those who step to me shall perish.")

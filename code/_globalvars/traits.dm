@@ -155,6 +155,10 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Loved By Kittens" = TRAIT_KITTEN_MOM,
 		"Waterbreathing" = TRAIT_WATER_BREATHING,
 		"Moonwater Elixir" = TRAIT_MOONWATER_ELIXIR,
+		"Doctorate of the Acryne" = TRAIT_POST_GRADUATE,
+		"Graduate of the Arcyne" = TRAIT_GRADUATE,
+		"Bachlors of the Arcyne" = TRAIT_BACHLOR,
+		"Student of the Arcyne" = TRAIT_ARCYNE_STUDENT,
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS
@@ -254,11 +258,10 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_FACELESS = span_danger("I am faceless. I am shunned. The others will recognise me for what I am. If I give them the chance."),
 	TRAIT_FLOWERFIELD_IMMUNITY = span_info("I am immune to the effects of flower fields."),
 	TRAIT_DUALWIELDER = span_info("I am trained in the art of dual wielding."),
-	//Acryne magick traits. you can only use the arcyne if you got one of these.
 	TRAIT_POST_GRADUATE = span_info("I have a deep understanding of the Arcyne and a post graduate degree in such. I know some of the most powerful spells allowed by Noc"),
-	TRAIT_GRADUATE_OF_ARCYNE = span_info("I have a substantial understanding of the Arcyne and a graduate degree in such. I know some of the more advanced spells allowed by Noc"),
-	TRAIT_BACHLORS_OF_ARCYNE = span_info("I have a basic understanding of the Arcyne and a degree from a mage's college showing such. I know some of the common spells allowed by Noc"),
-	TRAIT_STUDENT_OF_THE_ARCYNE = span_info("I have been studying the Arcyne for quite a while. I know a few basic spells allowed by Noc."),
+	TRAIT_GRADUATE = span_info("I have a substantial understanding of the Arcyne and a graduate degree in such. I know some of the more advanced spells allowed by Noc"),
+	TRAIT_BACHLOR = span_info("I have a basic understanding of the Arcyne and a degree from a mage's college showing such. I know some of the common spells allowed by Noc"),
+	TRAIT_ARCYNE_STUDENT = span_info("I have been studying the Arcyne for quite a while. I know a few basic spells allowed by Noc."),
 ))
 
 /// value -> trait name, generated on use from trait_by_type global
