@@ -53,4 +53,5 @@
 	H.change_stat(STATKEY_CON, 1)
 	H.change_stat(STATKEY_END, -1)
 	H.adjust_spellpoints(1)
+	ADD_TRAIT(H, TRAIT_STUDENT_OF_THE_ARCYNE, TRAIT_GENERIC) //todo, special version that allows them some combat shit
 	H.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation)

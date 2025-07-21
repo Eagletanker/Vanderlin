@@ -59,4 +59,4 @@
 	backpack_contents = list(/obj/item/book/granter/spellbook = 1, /obj/item/chalk = 1)
 	H.change_stat(STATKEY_INT, 1)
 	H.change_stat(STATKEY_SPD, -1)
-	ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STUDENT_OF_THE_ARCYNE, TRAIT_GENERIC)
