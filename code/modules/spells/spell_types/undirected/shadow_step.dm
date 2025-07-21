@@ -9,9 +9,6 @@
 	cooldown_time = 5 MINUTES
 	spell_cost = 15
 
-	attunements = list(
-		/datum/attunement/dark = 0.4
-	)
 
 /datum/action/cooldown/spell/undirected/shadow_step/cast(atom/cast_on)
 	. = ..()

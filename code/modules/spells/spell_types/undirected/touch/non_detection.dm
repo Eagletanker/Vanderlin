@@ -5,9 +5,6 @@
 	can_cast_on_self = TRUE
 
 	point_cost = 1
-	attunements = list(
-		/datum/attunement/illusion = 0.4,
-	)
 
 	cooldown_time = 10 MINUTES
 
@@ -15,9 +12,6 @@
 	draw_message = "I prepare to form a magical shroud."
 	drop_message = "I release my arcyne focus."
 	charges = 2
-
-/datum/action/cooldown/spell/undirected/touch/non_detection/adjust_hand_charges()
-	charges += FLOOR(attuned_strength * 1.5, 1)
 
 /datum/action/cooldown/spell/undirected/touch/non_detection/is_valid_target(atom/cast_on)
 	. = ..()

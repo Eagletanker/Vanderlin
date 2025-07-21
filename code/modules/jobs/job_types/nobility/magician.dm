@@ -29,8 +29,6 @@
 		/datum/action/cooldown/spell/undirected/touch/prestidigitation,
 	)
 	spell_points = 17
-	attunements_max = 6
-	attunements_min = 4
 
 /datum/job/magician/New()
 	if(prob(5))
@@ -52,7 +50,7 @@
 	beltr = /obj/item/storage/magebag
 	backl = /obj/item/weapon/polearm/woodstaff
 	shoes = /obj/item/clothing/shoes/shortboots
-	backpack_contents = list(/obj/item/scrying = 1, /obj/item/chalk = 1,/obj/item/reagent_containers/glass/bottle/killersice = 1, /obj/item/book/granter/spellbook/master = 1, /obj/item/weapon/knife/dagger/silver/arcyne = 1, /obj/item/storage/keyring/mage = 1)
+	backpack_contents = list(/obj/item/scrying = 1, /obj/item/chalk = 1,/obj/item/reagent_containers/glass/bottle/killersice = 1, /obj/item/book/granter/spellbook/courtmage = 1, /obj/item/weapon/knife/dagger/silver/arcyne = 1, /obj/item/storage/keyring/mage = 1)
 	if(!(H.patron == /datum/patron/divine/noc || /datum/patron/inhumen/zizo))
 		H.set_patron(/datum/patron/divine/noc)
 

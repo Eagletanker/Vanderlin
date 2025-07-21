@@ -24,7 +24,6 @@
 			span_notice("I trace a a sigil of warding in the air."),
 		)
 
-	if(attuned_strength < 1.5)
 		return
 
 	for(var/mob/living/extra_target in orange(FLOOR(attuned_strength, 1), owner))

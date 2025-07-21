@@ -216,7 +216,7 @@
 	var/static/list/spells = list(
 		/datum/action/cooldown/spell/projectile/fireball/greater,
 		/datum/action/cooldown/spell/projectile/lightning,
-		/datum/action/cooldown/spell/projectile/fetch,
+		/datum/action/cooldown/spell/undirected/touch/prestidigitation,
 	)
 
 /datum/outfit/job/heartfelt/magos/pre_equip(mob/living/carbon/human/H)
@@ -228,7 +228,7 @@
 	shoes = /obj/item/clothing/shoes/shortboots
 	belt = /obj/item/storage/belt/leather/plaquesilver
 	beltl = /obj/item/flashlight/flare/torch/lantern
-	beltr = /obj/item/book/granter/spellbook/expert
+	beltr = /obj/item/book/granter/spellbook/courtmage
 	ring = /obj/item/clothing/ring/gold
 	r_hand = /obj/item/weapon/polearm/woodstaff
 	backl = /obj/item/storage/backpack/satchel

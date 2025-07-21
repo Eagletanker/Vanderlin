@@ -5,9 +5,6 @@
 	sound = 'sound/magic/whiteflame.ogg'
 
 	point_cost = 1
-	attunements = list(
-		/datum/attunement/dark = 0.5,
-	)
 
 	cooldown_time = 25 SECONDS
 	spell_cost = 25

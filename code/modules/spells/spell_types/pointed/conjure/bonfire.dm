@@ -1,4 +1,4 @@
-/datum/action/cooldown/spell/conjure/bonfire
+/datum/action/cooldown/spell/conjure/bonfire //TODO: Azure Peak Campfire
 	name = "Create Bonfire"
 	desc = "Creates a magical bonfire to cook on."
 	button_icon_state = "create_campfire"

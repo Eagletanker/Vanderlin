@@ -22,7 +22,7 @@
 	backr = /obj/item/storage/backpack/satchel
 	beltr = /obj/item/storage/magebag/poor
 	beltl = /obj/item/reagent_containers/glass/bottle/manapot
-	backpack_contents = list(/obj/item/book/granter/spellbook/apprentice = 1, /obj/item/chalk = 1)
+	backpack_contents = list(/obj/item/book/granter/spellbook = 1, /obj/item/chalk = 1)
 	r_hand = /obj/item/weapon/polearm/woodstaff
 	if(H.mind)
 		H.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)

@@ -15,7 +15,7 @@
 
 	projectile_type = /obj/projectile/magic/aoe/fireball/rogue
 
-/obj/projectile/magic/aoe/fireball/rogue
+/obj/projectile/magic/aoe/fireball/rogue //a lesser fireball
 	name = "fireball"
 	exp_heavy = 0
 	exp_light = 1

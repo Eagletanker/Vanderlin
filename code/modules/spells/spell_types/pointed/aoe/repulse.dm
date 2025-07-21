@@ -18,9 +18,6 @@
 	charge_drain = 1
 	charge_slowdown = 0.7
 
-	attunements = list(
-		/datum/attunement/aeromancy = 0.4,
-	)
 
 	/// The max throw range of the repulsioon.
 	var/max_throw = 3

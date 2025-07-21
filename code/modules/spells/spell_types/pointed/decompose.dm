@@ -9,11 +9,8 @@
 	cast_range = 1
 	point_cost = 3
 	associated_skill = /datum/skill/magic/blood
-	attunements = list(
-		/datum/attunement/death = 0.3,
-		/datum/attunement/blood = 0.2,
-	)
-	invocation = "Return to rot."
+
+	invocation = "Pestra take thee!"
 	invocation_type = INVOCATION_WHISPER
 
 	charge_time = 5 SECONDS

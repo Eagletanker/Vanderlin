@@ -4,10 +4,6 @@
 	button_icon_state = "flower_field"
 
 	point_cost = 4
-	attunements = list(
-		/datum/attunement/earth = 0.4,
-		/datum/attunement/life = 0.3,
-	)
 
 	charge_time = 3 SECONDS
 	charge_drain = 3

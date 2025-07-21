@@ -7,10 +7,10 @@
 
 	charge_time = 7 SECONDS
 	charge_drain = 1
-	cooldown_time = 50 SECONDS
+	cooldown_time = 120 SECONDS
 	spell_cost = 40
 
-	aoe_radius = 2
+	aoe_radius = 3
 
 /datum/action/cooldown/spell/aoe/on_turf/arcyne_storm/cast_on_thing_in_aoe(atom/victim, atom/caster)
 	for(var/i in 1 to 16)

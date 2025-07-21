@@ -1,6 +1,6 @@
 /datum/action/cooldown/spell/projectile/arcyne_bolt //Similar to the Azure Peak acryne bolt
 	name = "Arcyne Bolt"
-	desc = "Shoot out rapid bolts of arcyne power. Damage is increased against NPCs by 50%"
+	desc = "Shoot out rapid bolts of arcyne power. Damage is increased against NPCs"
 	button_icon_state =  "arcane_bolt"
 	sound = 'sound/magic/vlightning.ogg'
 
@@ -18,7 +18,7 @@
 /obj/projectile/magic/energy/rogue3
 	name = "arcyne bolt"
 	icon_state = "arcane_barrage"
-	damage = 45
+	damage = 40
 	damage_type = BRUTE
 	armor_penetration = 5
 	npc_damage_mult = 1.5

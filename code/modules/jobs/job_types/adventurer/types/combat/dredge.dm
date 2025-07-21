@@ -474,7 +474,7 @@
 			head = /obj/item/clothing/head/roguehood/mage
 			armor = /obj/item/clothing/shirt/robe/mage
 			beltl = /obj/item/reagent_containers/glass/bottle/manapot
-			beltr = /obj/item/book/granter/spellbook/apprentice
+			beltr = /obj/item/book/granter/spellbook
 			H.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 			H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 			H.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)

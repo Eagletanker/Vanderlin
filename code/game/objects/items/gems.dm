@@ -15,6 +15,8 @@
 	experimental_inhand = FALSE
 	///For Mappers; gem_path = weight
 	var/list/valid_gems = list()
+	var/arcyne_potency = 20
+	var/datum/attunement/attuned
 
 /obj/item/gem/Initialize()
 	. = ..()
@@ -28,12 +30,6 @@
 		spawned.update_appearance(UPDATE_ICON_STATE)
 		return INITIALIZE_HINT_QDEL
 	update_appearance(UPDATE_ICON_STATE)
-
-/obj/item/gem/on_consume(mob/living/eater)
-	. = ..()
-	if(attuned)
-		eater.adjust_spellpoints(0.5)
-		eater.mana_pool.adjust_attunement(attuned, 0.1)
 
 ///This is a switch incase anyone would like to add more...
 /obj/item/gem/update_icon_state()
@@ -64,6 +60,8 @@
 	//color = "#15af158c"
 	icon_state = "emerald_cut"
 	sellprice = 44
+	arcyne_potency = 7
+	attuned = /datum/attunement/earth
 
 /obj/item/gem/blue
 	name = "blortz"
@@ -71,6 +69,8 @@
 	//color = "#1ca5aa8c"
 	icon_state = "quartz_cut"
 	sellprice = 88
+	arcyne_potency = 25
+	attuned = /datum/attunement/ice
 
 /obj/item/gem/yellow
 	name = "toper"
@@ -78,6 +78,8 @@
 	//color = "#e6a0088c"
 	icon_state = "topaz_cut"
 	sellprice = 25
+	arcyne_potency = 5
+	attuned = /datum/attunement/light
 
 /obj/item/gem/violet
 	name = "saffira"
@@ -85,6 +87,8 @@
 	//color = "#1733b38c"
 	icon_state = "sapphire_cut"
 	sellprice = 56
+	arcyne_potency = 10
+	attuned = /datum/attunement/electric
 
 /obj/item/gem/diamond
 	name = "dorpel"
@@ -92,6 +96,8 @@
 	//color = "#ffffff8c"
 	icon_state = "diamond_cut"
 	sellprice = 121
+	arcyne_potency = 15
+	attuned = /datum/attunement/aeromancy
 
 /obj/item/gem/red
 	name = "rubor"

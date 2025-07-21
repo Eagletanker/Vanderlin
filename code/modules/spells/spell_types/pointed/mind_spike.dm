@@ -1,13 +1,10 @@
 /datum/action/cooldown/spell/mind_spike
-	name = "Mind Spike"
+	name = "Brain Freeze"
 	desc = "You drive a disorienting spike of psychic energy into the mind of your target."
 	sound = 'sound/magic/whiteflame.ogg'
 	self_cast_possible = FALSE
 
 	point_cost = 1
-	attunements = list(
-		/datum/attunement/dark = 0.5,
-	)
 
 	charge_time = 2 SECONDS
 	charge_drain = 1
@@ -30,7 +27,7 @@
 		if(!brain)
 			continue
 		brain.applyOrganDamage((brain.maxHealth / 8))
-		to_chat(L, "<span class='userdanger'>Psychic energy is driven into my skull!!</span>")
+		to_chat(L, "<span class='userdanger'>My brain freezes in pain!!</span>")
 
 /obj/effect/temp_visual/mind_spike
 	icon = 'icons/effects/effects.dmi'

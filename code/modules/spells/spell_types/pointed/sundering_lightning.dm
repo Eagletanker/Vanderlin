@@ -6,9 +6,6 @@
 
 	point_cost = 8
 	cast_range = 4
-	attunements = list(
-		/datum/attunement/electric = 0.9
-	)
 
 	charge_time = 3.5 SECONDS
 	charge_drain = 1

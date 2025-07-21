@@ -6,9 +6,7 @@
 
 	point_cost = 1
 	associated_skill = /datum/skill/magic/druidic
-	attunements = list(
-		/datum/attunement/earth = 0.3,
-	)
+
 	invocation = "Teeth of a serpent."
 	invocation_type = INVOCATION_WHISPER
 

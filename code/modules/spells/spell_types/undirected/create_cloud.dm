@@ -1,6 +1,6 @@
 // Orginially /poisonspray
 /datum/action/cooldown/spell/undirected/create_cloud
-	name = "Create Cloud"
+	name = "Aerosolize"
 	desc = "Hold a container in your hand, it's contents turn into a 3-radius smoke"
 	button_icon_state = "aerosolize"
 	sound = 'sound/magic/whiteflame.ogg'
@@ -13,11 +13,6 @@
 
 	invocation = "Create cloud!"
 	invocation_type = INVOCATION_SHOUT
-
-	attunements = list(
-		/datum/attunement/blood = 0.3,
-		/datum/attunement/death = 0.3,
-	)
 
 /datum/action/cooldown/spell/undirected/create_cloud/cast(atom/cast_on)
 	. = ..()

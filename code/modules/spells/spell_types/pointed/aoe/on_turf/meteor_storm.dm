@@ -10,7 +10,7 @@
 	charge_time = 30 SECONDS
 	charge_drain = 2
 	charge_slowdown = 1.3
-	cooldown_time = 10 MINUTES //too good for anything less
+	cooldown_time = 7.5 MINUTES //too good for anything less
 	spell_cost = 120
 
 	aoe_radius = 5

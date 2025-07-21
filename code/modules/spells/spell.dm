@@ -108,9 +108,11 @@
 	/// Threshold to which we can increase [associated_skill] to
 	var/skill_level_threshold = SKILL_LEVEL_JOURNEYMAN
 
-	/// Assoc list of [datum/attunement] to value
+	var/refundable =FALSE //Allows for spells to be refunded for their level slot and spell points. Set to false so you cant give yourself more spell points by forgetting a spell given via admins
+
+	/// Assoc list of [datum/attunement] to value: For Alchemical spells ONLY. Should not be present on acryne or divine magic.
 	var/list/attunements
-	/// Adjust some spell effects based on attunement
+	/// Adjust some spell effects based on attunement: Please use this rarely, and with extremely low values.
 	var/attuned_strength
 
 	/// Ignore the trait [TRAIT_SPELLBLOCK]
@@ -430,7 +432,7 @@
 
 	if(HAS_TRAIT(owner, TRAIT_NOC_CURSE))
 		if(feedback)
-			to_chat(owner, span_warning("My magicka has left me..."))
+			to_chat(owner, span_warning("My link to the Acryne has been severed..."))
 		return FALSE
 
 	for(var/datum/action/cooldown/spell/spell in owner.actions)

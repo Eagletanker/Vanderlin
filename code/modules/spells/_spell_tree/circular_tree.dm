@@ -1,3 +1,18 @@
+//cantrips. Basic spells that we dont need to have a rarity cost with. The only combat spell here should maybe be arcyne bolt
+//Level One: Basic spells that should have a rarity. Most mages can take six of these
+//level Two:Uncommon spells. Most mages can take four of these
+//level three: Powerful combat spells. Meta spells like fireballs should be here, Most mages can take two of these
+//level four: Most mages will only have one of these. For things on or near the power of lightning
+//level five: Rare spells. Only the CM and Archivist should know these, and the archivist should be unable to learn the combat ones with their spell points
+//level six: Super Rare Spells. Arcyne Storm, Prison, Sundering Lightning. Things on that power level should be here. The CM can take ONE of these.
+
+
+
+
+
+
+
+
 /datum/spell_node/arcyne_eye
 	name = "Arcane Eye"
 	desc = "Create an invisible, magical eye."
@@ -90,7 +105,6 @@
 	desc = "Create a bonfire on the ground."
 	node_x = 100
 	node_y = 0
-	prerequisites = list(/datum/spell_node/arcyne_eye)
 	spell_type = /datum/action/cooldown/spell/conjure/bonfire
 
 /datum/spell_node/acid_splash
@@ -127,7 +141,6 @@
 	desc = "Launch an explosive ball of fire."
 	node_x = RIGHT_X_TIER_3
 	node_y = RIGHT_Y_RIGHT
-	prerequisites = list(/datum/spell_node/spitfire)
 	spell_type = /datum/action/cooldown/spell/projectile/fireball
 
 /datum/spell_node/message
@@ -156,7 +169,6 @@
 	desc = "Increase your walking speed."
 	node_x = DOWN_X_RIGHT
 	node_y = DOWN_Y_TIER_2
-	prerequisites = list(/datum/spell_node/air_affinity)
 	spell_type = /datum/action/cooldown/spell/undirected/longstrider
 
 /datum/spell_node/haste
@@ -164,7 +176,6 @@
 	desc = "Make a creature move and act more quickly."
 	node_x = DOWN_X_RIGHT
 	node_y = DOWN_Y_TIER_3
-	prerequisites = list(/datum/spell_node/longstrider)
 	spell_type = /datum/action/cooldown/spell/status/haste
 
 /datum/spell_node/repel
@@ -172,7 +183,6 @@
 	desc = "Push creatures away from you with force."
 	node_x = DOWN_X_RIGHT + 100
 	node_y = DOWN_Y_TIER_3
-	prerequisites = list(/datum/spell_node/haste)
 	spell_type = /datum/action/cooldown/spell/projectile/repel
 
 /datum/spell_node/featherfall
@@ -187,7 +197,6 @@
 	desc = "Slow multiple creatures in an area."
 	node_x = DOWN_X_RIGHT + 50
 	node_y = DOWN_Y_TIER_2 - 50
-	prerequisites = list(/datum/spell_node/featherfall)
 	spell_type = /datum/action/cooldown/spell/aoe/on_turf/ensnare
 
 /datum/spell_node/fetch
@@ -209,7 +218,6 @@
 	desc = "Unleash a devastating storm of magical energy."
 	node_x = DOWN_X_LEFT -25
 	node_y = DOWN_Y_TIER_3
-	prerequisites = list(/datum/spell_node/arcane_bolt, /datum/spell_node/fetch)
 	spell_type = /datum/action/cooldown/spell/aoe/on_turf/arcyne_storm
 
 /datum/spell_node/light
@@ -231,7 +239,6 @@
 	desc = "Provide divine assistance to aid in tasks."
 	node_x = LEFT_X_TIER_2
 	node_y = LEFT_Y_LEFT
-	prerequisites = list(/datum/spell_node/earth_affinity)
 	spell_type = /datum/action/cooldown/spell/status/guidance
 
 /datum/spell_node/magic_stone
@@ -239,7 +246,6 @@
 	desc = "Conjure a magical brick in your hand"
 	node_x = LEFT_X_TIER_2
 	node_y = LEFT_Y_LEFT - 50
-	prerequisites = list(/datum/spell_node/earth_affinity)
 	spell_type = /datum/action/cooldown/spell/undirected/conjure_item/brick
 
 /datum/spell_node/flower_field
@@ -247,7 +253,6 @@
 	desc = "Summons a field of flowers"
 	node_x = LEFT_X_TIER_3
 	node_y = LEFT_Y_LEFT - 50
-	prerequisites = list(/datum/spell_node/magic_stone)
 	spell_type = /datum/action/cooldown/spell/aoe/on_turf/circle/flower_field
 
 /datum/spell_node/lightning_bolt
@@ -255,7 +260,6 @@
 	desc = "Strike your enemies with a bolt of lightning."
 	node_x = LEFT_X_TIER_2
 	node_y = LEFT_Y_RIGHT + 50
-	prerequisites = list(/datum/spell_node/electric_affinity)
 	spell_type = /datum/action/cooldown/spell/projectile/lightning
 
 /datum/spell_node/mana_conservation
@@ -264,7 +268,6 @@
 	cost = 5
 	node_x = LEFT_X_TIER_3
 	node_y = LEFT_Y_RIGHT
-	prerequisites = list(/datum/spell_node/storm_caller)
 	is_passive = TRUE
 
 /datum/spell_node/mana_conservation/on_node_buy(mob/user)
@@ -276,7 +279,6 @@
 	desc = "Lightning that tears through magical defenses."
 	node_x = LEFT_X_TIER_3
 	node_y = LEFT_Y_RIGHT + 50
-	prerequisites = list(/datum/spell_node/lightning_bolt, /datum/spell_node/mana_conservation)
 	spell_type = /datum/action/cooldown/spell/sundering_lightning
 
 /datum/spell_node/blade_burst
@@ -284,7 +286,6 @@
 	desc = "Create a burst of spectral blades around you."
 	node_x = LEFT_X_TIER_3
 	node_y = LEFT_Y_LEFT
-	prerequisites = list(/datum/spell_node/guidance)
 	spell_type = /datum/action/cooldown/spell/blade_burst
 
 /datum/spell_node/prestidigitation
@@ -360,6 +361,18 @@
 	prerequisites = list(/datum/spell_node/ray_of_frost)
 	spell_type = /datum/action/cooldown/spell/projectile/frost_bolt
 
+/datum/spell_node/repulse
+	name = "Repulse"
+	desc = "Throws everything around you backwards with a wave of force"
+	node_x = UP_X_RIGHT + 100
+	node_y = UP_Y_TIER_3
+	spell_type = /datum/action/cooldown/spell/aoe/repulse
+
+/datum/spell_node/lightning_lure
+	name = "Lightning Lure"
+	desc = "Grasp your target with electricity, and pull them towards you"
+	node_x = UP_X_RIGHT + 150
+	node_y = UP_Y_TIER_3
 
 /datum/spell_node/gib
 	name = "Xylix's Cruel Prank"

@@ -1,4 +1,4 @@
-/datum/action/cooldown/spell/projectile/blood_bolt
+/datum/action/cooldown/spell/projectile/blood_bolt //vamp only
 	name = "Blood Bolt"
 	desc = "Launch a bolt of blood infused with lightning."
 	button_icon_state = "bloodlightning"
