@@ -5,7 +5,7 @@
 	var/icon_state = "rune1"
 	var/node_x = 0  // Position on the research tree
 	var/node_y = 0
-	/// List of spell node types required
+	/// List of spell node types required - Only for Mana upgrades
 	var/list/prerequisites = list()
 	/// Description of what this unlocks
 	var/list/unlocks = list()

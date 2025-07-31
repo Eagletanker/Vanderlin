@@ -58,6 +58,8 @@
 	var/school = SCHOOL_UNSET
 	/// Cost to learn this spell in the tree
 	var/point_cost = 0
+	/// what level spell slot this spell takes. Use numbers 0-6. 0 are cantrips
+	var/spell_slot = 0
 	/// Cost to cast, mana or devotion
 	var/spell_cost = 0
 	/// Cost to stamina for casting the spell. Defaults to spell_cost / 2
