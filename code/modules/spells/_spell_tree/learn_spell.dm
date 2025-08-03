@@ -1,6 +1,6 @@
 /datum/action/cooldown/spell/undirected/learn
 	name = "Attempt to learn a new spell"
-	desc = "Weave a new spell"
+	desc = "Recall a spell"
 	button_icon_state = "book1"
 	sound = null
 
@@ -54,6 +54,11 @@
 
 		if(cost > user.spell_points - user.used_spell_points)
 			to_chat(user, span_warning("You do not have enough spell points to learn this."))
+			qdel(node)
+			return
+
+		if(cost > user.spell_slots - user.used_spell_slots)
+			to_chat(user, span_warning("You do not have enough spell slots to learn this."))
 			qdel(node)
 			return
 

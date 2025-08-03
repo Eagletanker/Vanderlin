@@ -144,7 +144,7 @@
 		var/obj/effect/proc_holder/spell/spell = spell_list[i]
 		if(spell.refundable == TRUE)
 			if(spell.cost > 0)
-				resettable_spells["[spell.name]: [spell.cost]"] = spell_list[i]
+				resettable_spells["[spell.name]: [spell.point_cost]"] = spell_list[i]
 	if(!resettable_spells.len)
 		to_chat(user, span_warning("I have no spells to unbind!"))
 		return

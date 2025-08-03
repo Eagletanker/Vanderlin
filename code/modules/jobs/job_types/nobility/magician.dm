@@ -28,7 +28,7 @@
 		/datum/action/cooldown/spell/undirected/jaunt/ethereal_jaunt,
 		/datum/action/cooldown/spell/undirected/touch/prestidigitation,
 	)
-	spell_points = 17
+	spell_points = 30
 
 /datum/job/magician/New()
 	if(prob(5))
