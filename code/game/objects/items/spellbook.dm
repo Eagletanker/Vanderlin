@@ -136,7 +136,7 @@
 	var/datum/mind/user_mind = user.mind
 	if(!user_mind) return // How??
 	if(user_mind.has_changed_spell)
-		to_chat(user, span_warning("I have already unbinded my spells today!"))
+		to_chat(user, span_warning("I have already unbound my spells today!"))
 		return
 	var/list/resettable_spells = list()
 	var/list/spell_list = user_mind.spell_list
