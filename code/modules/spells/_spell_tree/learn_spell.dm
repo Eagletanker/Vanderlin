@@ -63,6 +63,7 @@
 		// 	return
 
 		user.used_spell_points += cost
+		user.adjust_spell_points(cost, TRUE)
 		unlocked_spells += spell_type
 
 		if(node.is_passive)
@@ -70,7 +71,7 @@
 			to_chat(user, span_notice("You have learned the passive technique: [node.name]"))
 		else
 			if(node.spell_type)
-				user.add_spell(node.spell_type, silent = FALSE)
+				user.add_spell(node.spell_type, override = TRUE)
 			to_chat(usr, span_notice("You have learned the spell: [node.name]"))
 
 		selected_spell = node

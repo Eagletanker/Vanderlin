@@ -166,8 +166,8 @@
 	weight = 100
 
 /datum/special_trait/arsonist/on_apply(mob/living/carbon/human/character, silent)
-	character.mind.special_items["Firebomb One"] = /obj/item/bomb
-	character.mind.special_items["Firebomb Two"] = /obj/item/bomb
+	character.mind.special_items["Firebomb One"] = /obj/item/explosive/bottle
+	character.mind.special_items["Firebomb Two"] = /obj/item/explosive/bottle
 	character.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
 
 /datum/special_trait/tombraider
@@ -232,6 +232,7 @@
 	character.grant_language(/datum/language/hellspeak)
 	character.grant_language(/datum/language/celestial)
 	character.grant_language(/datum/language/orcish)
+	character.grant_language(/datum/language/deepspeak)
 	character.grant_language(/datum/language/oldpsydonic)
 	character.grant_language(/datum/language/zalad)
 	character.grant_language(/datum/language/thievescant)
@@ -318,7 +319,7 @@
 	name = "Giant"
 	greet_text = span_notice("I've always been called a giant. I am valued for my stature, but, this world made for smaller folk has forced me to move cautiously.")
 	req_text = "Not a kobold or dwarf"
-	restricted_races = list(/datum/species/dwarf/mountain, /datum/species/kobold)
+	restricted_races = list(SPEC_ID_DWARF, SPEC_ID_KOBOLD)
 	weight = 50
 
 /datum/special_trait/backproblems/on_apply(mob/living/carbon/human/character)
@@ -410,7 +411,7 @@
 	weight = 20
 
 /datum/special_trait/outlaw/on_apply(mob/living/carbon/human/character, silent)
-	GLOB.outlawed_players += character.real_name
+	GLOB.outlawed_players |= character.real_name
 
 /datum/special_trait/unlucky
 	name = "Unlucky"
@@ -498,7 +499,7 @@
 	QDEL_NULL(character.beltr)
 	QDEL_NULL(character.backr)
 	QDEL_NULL(character.head)
-	character.equip_to_slot_or_del(new /obj/item/clothing/pants/tights/random(character), ITEM_SLOT_PANTS)
+	character.equip_to_slot_or_del(new /obj/item/clothing/pants/tights/colored/random(character), ITEM_SLOT_PANTS)
 	character.equip_to_slot_or_del(new /obj/item/clothing/armor/chainmail(character), ITEM_SLOT_ARMOR)
 	character.equip_to_slot_or_del(new /obj/item/storage/belt/leather(character), ITEM_SLOT_BELT)
 	character.equip_to_slot_or_del(new /obj/item/storage/belt/pouch/coins/rich(character), ITEM_SLOT_BELT_R)
@@ -527,9 +528,9 @@
 	character.adjust_skillrank(/datum/skill/combat/wrestling, 6, TRUE)
 	character.adjust_skillrank(/datum/skill/combat/unarmed, 6, TRUE)
 	character.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-	character.STASTR = 20
-	character.STACON = 20
-	character.STAEND = 20
+	character.set_stat_modifier("[type]", STATKEY_STR, 20)
+	character.set_stat_modifier("[type]", STATKEY_CON, 20)
+	character.set_stat_modifier("[type]", STATKEY_END, 20)
 
 /datum/special_trait/my_precious
 	name = "My Precious"

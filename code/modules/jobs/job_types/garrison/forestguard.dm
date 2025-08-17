@@ -19,7 +19,6 @@
 	bypass_lastclass = TRUE
 	selection_color = "#0d6929"
 
-	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_races = RACES_PLAYER_GUARD
 	give_bank_account = 30
@@ -39,7 +38,7 @@
 		cloak = /obj/item/clothing/cloak/forrestercloak
 	armor = /obj/item/clothing/armor/leather/advanced/forrester
 	head = /obj/item/clothing/head/helmet/medium/decorated/skullmet
-	shirt = /obj/item/clothing/shirt/undershirt/black
+	shirt = /obj/item/clothing/shirt/undershirt/colored/black
 	pants = /obj/item/clothing/pants/trou/leather
 	shoes = /obj/item/clothing/shoes/boots
 	wrists = /obj/item/clothing/wrists/bracers/leather

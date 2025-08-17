@@ -60,7 +60,6 @@
 	//color = "#15af158c"
 	icon_state = "emerald_cut"
 	sellprice = 44
-	arcyne_potency = 7
 	attuned = /datum/attunement/earth
 
 /obj/item/gem/blue
@@ -69,7 +68,6 @@
 	//color = "#1ca5aa8c"
 	icon_state = "quartz_cut"
 	sellprice = 88
-	arcyne_potency = 25
 	attuned = /datum/attunement/ice
 
 /obj/item/gem/yellow
@@ -78,8 +76,7 @@
 	//color = "#e6a0088c"
 	icon_state = "topaz_cut"
 	sellprice = 25
-	arcyne_potency = 5
-	attuned = /datum/attunement/light
+	attuned = /datum/attunement/electric
 
 /obj/item/gem/violet
 	name = "saffira"
@@ -87,8 +84,7 @@
 	//color = "#1733b38c"
 	icon_state = "sapphire_cut"
 	sellprice = 56
-	arcyne_potency = 10
-	attuned = /datum/attunement/electric
+	attuned = /datum/attunement/arcyne
 
 /obj/item/gem/diamond
 	name = "dorpel"
@@ -96,8 +92,7 @@
 	//color = "#ffffff8c"
 	icon_state = "diamond_cut"
 	sellprice = 121
-	arcyne_potency = 15
-	attuned = /datum/attunement/aeromancy
+	attuned = /datum/attunement/light
 
 /obj/item/gem/red
 	name = "rubor"

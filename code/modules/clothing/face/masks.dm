@@ -76,6 +76,15 @@
 	desc = "A knightly steel mask that both conceals and protects the face. Usually paired with a bascinet."
 	max_integrity = 300
 
+/obj/item/clothing/face/facemask/silver
+	name = "silver mask"
+	icon = 'icons/roguetown/clothing/special/adept.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/adept.dmi'
+	icon_state = "silvermask"
+	armor = list("blunt" = 100, "slash" = 100, "stab" = 100,  "piercing" = 85, "fire" = 0, "acid" = 0)
+	desc = "A custom made silver penance mask, created especially for the Adepts of the Inquisitorial Lodge."
+	max_integrity = 300
+
 /obj/item/clothing/face/facemask/shadowfacemask
 	name = "anthraxi war mask"
 	desc = "A metal mask resembling a spider's face. Such a visage haunts many an older dark elf's nitemares - while the younger generation simply scoffs at such relics."
@@ -147,6 +156,20 @@
 	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
 	sewrepair = TRUE
 	gas_transfer_coefficient = 0.3
+
+/obj/item/clothing/face/courtphysician
+	name = "court physican's mask"
+	desc = "Similar to a feldsher's mask, this one is made with actual bone! Don't ask whose."
+	icon_state = "courtmask"
+	item_state = "courtmask"
+	resistance_flags = FLAMMABLE
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	body_parts_covered = FACE|EARS|EYES|MOUTH|NECK
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	sewrepair = TRUE
+	gas_transfer_coefficient = 0.3
+	icon = 'icons/roguetown/clothing/courtphys.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/courtphys.dmi'
 
 /obj/item/clothing/face/facemask/copper
 	name = "copper mask"

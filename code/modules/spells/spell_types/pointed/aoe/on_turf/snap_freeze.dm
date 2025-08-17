@@ -30,7 +30,7 @@
 			playsound(get_turf(L), 'sound/magic/magic_nulled.ogg', 100)
 			continue
 		L.adjustFireLoss(35)
-		L.apply_status_effect(/datum/status_effect/debuff/frostbite)
+		L.apply_status_effect(/datum/status_effect/debuff/frostbite, null, attuned_strength)
 		to_chat(L, span_userdanger("The air chills your bones!"))
 
 /obj/effect/temp_visual/trapice

@@ -11,7 +11,7 @@
 	charge_slowdown = 0.7
 	cooldown_time = 15 SECONDS
 	spell_cost = 30
-
+	spell_flags = SPELL_RITUOS
 	projectile_type = /obj/projectile/magic/acidsplash
 
 /obj/projectile/magic/acidsplash

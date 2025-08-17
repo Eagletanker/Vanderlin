@@ -8,7 +8,7 @@
 	charge_drain = 2
 	cooldown_time = 25 SECONDS
 	spell_cost = 40
-
+	spell_flags = SPELL_RITUOS
 	aoe_radius = 4
 
 	var/duration = 6 SECONDS //a bit more effective than what it was before

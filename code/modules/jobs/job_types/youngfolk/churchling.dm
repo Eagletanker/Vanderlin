@@ -14,7 +14,6 @@
 	min_pq = -10
 	bypass_lastclass = TRUE
 
-	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_CHILD)
 	allowed_races = RACES_PLAYER_ALL
 	allowed_patrons = ALL_TEMPLE_PATRONS
@@ -43,7 +42,7 @@
 		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	if(H.gender == FEMALE)
 		head = /obj/item/clothing/head/armingcap
-		armor = /obj/item/clothing/shirt/dress/gen/random
+		armor = /obj/item/clothing/shirt/dress/gen/colored/random
 		shirt = /obj/item/clothing/shirt/undershirt
 	else
 		armor = /obj/item/clothing/shirt/robe

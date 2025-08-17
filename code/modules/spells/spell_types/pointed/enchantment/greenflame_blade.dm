@@ -7,5 +7,5 @@
 
 	charge_required = FALSE
 	spell_cost = 30
-
+	spell_flags = SPELL_RITUOS
 	enchantment = SEARING_BLADE_ENCHANT

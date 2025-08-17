@@ -12,7 +12,7 @@
 	charge_slowdown = 0.7
 	cooldown_time = 25 SECONDS
 	spell_cost = 30
-
+	spell_flags = SPELL_RITUOS
 	projectile_type = /obj/projectile/magic/aoe/fireball/rogue
 
 /obj/projectile/magic/aoe/fireball/rogue //a lesser fireball
@@ -41,6 +41,7 @@
 	charge_slowdown = 1.3
 	cooldown_time = 45 SECONDS
 	spell_cost = 50
+	spell_flags = NONE
 
 	projectile_type = /obj/projectile/magic/aoe/fireball/rogue/great
 

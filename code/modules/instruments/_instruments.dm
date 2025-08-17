@@ -74,7 +74,6 @@
 	. = ..()
 
 /obj/item/instrument/process()
-	. = ..()
 	var/source
 	if(!ishuman(loc))
 		var/atom/thing = loc
@@ -108,7 +107,7 @@
 
 	for(var/obj/structure/soil/soil in view(7, source))
 		var/distance = max(1, get_dist(source, soil))
-		soil.process_growth(round(2 / distance, 0.1))
+		soil.process_npk_growth(round(2 / distance, 0.1))
 
 	for(var/mob/living/carbon/L in hearers(7, source))
 		if(!L.client)

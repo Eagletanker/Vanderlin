@@ -15,5 +15,3 @@
 	status_effect = /datum/status_effect/buff/acrynehaste
 	duration_scaling = TRUE
 	duration_modification = 30 SECONDS
-
-

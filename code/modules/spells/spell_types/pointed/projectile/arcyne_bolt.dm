@@ -12,7 +12,7 @@
 	charge_slowdown = 1.3
 	cooldown_time = 5 SECONDS
 	spell_cost = 20
-
+	spell_flags = SPELL_RITUOS
 	projectile_type = /obj/projectile/magic/energy/rogue3
 
 /obj/projectile/magic/energy/rogue3

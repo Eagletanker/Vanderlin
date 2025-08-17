@@ -194,9 +194,8 @@
 	return FALSE					//nonliving mobs don't have hands
 
 /mob/living/put_in_hand_check(obj/item/I)
-	if(I.twohands_required && get_inactive_held_item())
-		return FALSE
-	if(istype(I) && ((mobility_flags & MOBILITY_PICKUP) || (I.item_flags & ABSTRACT)))
+	if(istype(I) && (((mobility_flags & MOBILITY_PICKUP) || (I.item_flags & ABSTRACT)) \
+		&& !(SEND_SIGNAL(src, COMSIG_LIVING_TRY_PUT_IN_HAND, I) & COMPONENT_LIVING_CANT_PUT_IN_HAND)))
 		return TRUE
 	return FALSE
 
@@ -307,9 +306,8 @@
 		update_inv_hands()
 	if(atkswinging)
 		stop_attack(FALSE)
+
 	if(I)
-		if(IS_WEAKREF_OF(I, offered_item))
-			offered_item = null
 		if(client)
 			client.screen -= I
 		I.layer = initial(I.layer)
@@ -328,6 +326,12 @@
 	SEND_SIGNAL(I, COMSIG_ITEM_POST_UNEQUIP, force, newloc, no_move, invdrop, silent)
 	SEND_SIGNAL(src, COMSIG_MOB_UNEQUIPPED_ITEM, I, force, newloc, no_move, invdrop, silent)
 	return TRUE
+
+/mob/living/doUnEquip(obj/item/I, force, newloc, no_move, invdrop, silent)
+	. = ..()
+	if(I)
+		if(IS_WEAKREF_OF(I, offered_item_ref))
+			stop_offering_item()
 
 //Outdated but still in use apparently. This should at least be a human proc.
 //Daily reminder to murder this - Remie.
@@ -416,7 +420,7 @@
 
 /obj/item/proc/equip_to_best_slot(mob/M)
 	if(src != M.get_active_held_item())
-		to_chat(M, "<span class='warning'>I are not holding anything to equip!</span>")
+		to_chat(M, span_warning("I are not holding anything to equip!"))
 		return FALSE
 
 	if(M.equip_to_appropriate_slot(src))
@@ -437,7 +441,7 @@
 		if(SEND_SIGNAL(I, COMSIG_TRY_STORAGE_INSERT, src, M))
 			return TRUE
 
-	to_chat(M, "<span class='warning'>I couldn't equip that.</span>")
+	to_chat(M, span_warning("I couldn't equip that."))
 	return FALSE
 
 
