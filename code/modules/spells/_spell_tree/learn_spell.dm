@@ -57,10 +57,10 @@
 			qdel(node)
 			return
 
-		if(cost > user.spell_slots - user.used_spell_slots)
-			to_chat(user, span_warning("You do not have enough spell slots to learn this."))
-			qdel(node)
-			return
+		// if(cost > user.spell_slots - user.used_spell_slots)
+		// 	to_chat(user, span_warning("You do not have enough spell slots to learn this."))
+		// 	qdel(node)
+		// 	return
 
 		user.used_spell_points += cost
 		unlocked_spells += spell_type
