@@ -9,7 +9,6 @@
 
 	charge_time = 3 SECONDS
 	charge_drain = 2
-	charge_slowdown = 0.3
 	cooldown_time = 20 SECONDS
 	spell_cost = 30
 	spell_flags = SPELL_RITUOS

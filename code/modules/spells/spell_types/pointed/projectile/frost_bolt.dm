@@ -8,7 +8,7 @@
 
 	charge_time = 2 SECONDS
 	charge_drain = 1
-	charge_slowdown = 0.7
+	charge_slowdown = 0.2
 	cooldown_time = 20 SECONDS
 	spell_cost = 30
 	spell_flags = SPELL_RITUOS
@@ -25,7 +25,8 @@
 /obj/projectile/magic/frostbolt
 	name = "frost bolt"
 	icon_state = "ice_2"
-	damage = 25
+	damage = 30
+	armor_penetration = 5
 	damage_type = BURN
 	range = 12
 	speed = 1

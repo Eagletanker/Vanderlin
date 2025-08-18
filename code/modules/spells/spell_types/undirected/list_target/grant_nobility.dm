@@ -4,7 +4,7 @@
 	button_icon_state = "recruit_titlegrant"
 
 	spell_type = NONE
-	cooldown_time = 4 MINUTES
+	cooldown_time = 10 SECONDS
 	target_radius = 3
 
 /datum/action/cooldown/spell/undirected/list_target/grant_nobility/get_list_targets(atom/center, target_radius)

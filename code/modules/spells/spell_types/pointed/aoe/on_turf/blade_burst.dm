@@ -12,7 +12,7 @@
 	cooldown_time = 20 SECONDS
 	spell_cost = 30
 
-	// aoe_radius = 2
+	aoe_radius = 2
 
 /datum/action/cooldown/spell/blade_burst/cast(atom/cast_on)
 	. = ..()

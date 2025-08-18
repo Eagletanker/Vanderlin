@@ -9,10 +9,10 @@
 	invocation = ""
 	invocation_type = INVOCATION_SHOUT
 
-	charge_time = 1 SECONDS
+	charge_time = 0.1 SECONDS
 	charge_drain = 1
 	charge_slowdown = 0.7
-	cooldown_time = 15 SECONDS
+	cooldown_time = 5 SECONDS
 	spell_cost = 25
 	spell_flags = SPELL_RITUOS
 	projectile_type = /obj/projectile/magic/eldritchblast
@@ -21,7 +21,8 @@
 	name = "eldritch blast"
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "eldritch_blast"
-	damage = 25
+	damage = 30
+	armor_penetration = 15 //better armor pen than arcyne bolt but worse damage.
 	damage_type = BRUTE
 	range = 15
 	woundclass = BCLASS_STAB

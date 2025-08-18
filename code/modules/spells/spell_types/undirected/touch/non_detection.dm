@@ -53,7 +53,7 @@
 	color = "#3FBAFD"
 
 /atom/movable/screen/alert/status_effect/non_detection
-	name = "Thaumaturgical Voice"
+	name = "Anti-Scrying Shroud"
 	desc = "I am projected from divination magic for a time."
 	icon_state = "stressvg"
 

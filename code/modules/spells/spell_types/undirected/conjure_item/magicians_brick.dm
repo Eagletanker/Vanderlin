@@ -5,7 +5,7 @@
 	button_icon_state = "magicians_brick"
 	sound = 'sound/magic/whiteflame.ogg'
 
-	point_cost = 1
+	point_cost = 3
 
 	cooldown_time = 5 SECONDS
 	spell_cost = 30
@@ -48,6 +48,6 @@
 	slot_flags = ITEM_SLOT_MOUTH
 	obj_flags = null
 	w_class = WEIGHT_CLASS_TINY
-	possible_item_intents = list(/datum/intent/mace/strike) // Not giving it smash so it don't become competetive with conjure weapon (as a melee weapon)
+	possible_item_intents = list(/datum/intent/mace/strike, datum/intent/mace/smash)
 	associated_skill = /datum/skill/magic/arcane // fuck it lets see how it is live
 	hitsound = list('sound/combat/hits/blunt/brick.ogg')
