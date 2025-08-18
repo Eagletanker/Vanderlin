@@ -34,14 +34,12 @@ GLOBAL_VAR_INIT(mobids, 1)
 	for (var/alert in alerts)
 		clear_alert(alert, TRUE)
 	if(observers && observers.len)
-		for(var/M in observers)
-			var/mob/dead/observe = M
+		for(var/mob/dead/observe as anything in observers)
 			observe.reset_perspective(null)
 	qdel(hud_used)
 	for(var/cc in client_colours)
 		qdel(cc)
 	client_colours = null
-	offered_item = null
 	ghostize(drawskip=TRUE)
 	..()
 	return QDEL_HINT_HARDDEL
@@ -243,7 +241,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 	return null
 
 ///Is the mob incapacitated
-/mob/proc/incapacitated(ignore_restraints = FALSE, ignore_grab = TRUE)
+/mob/proc/incapacitated(flags)
 	return
 
 /**
@@ -413,77 +411,6 @@ GLOBAL_VAR_INIT(mobids, 1)
 		to_chat(src, examine_block("<span class='infoplain'>[result.Join()]</span>"))
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
 
-/**
- * Point at an atom
- *
- * mob verbs are faster than object verbs. See
- * [this byond forum post](https://secure.byond.com/forum/?post=1326139&page=2#comment8198716)
- * for why this isn't atom/verb/pointed()
- *
- * note: ghosts can point, this is intended
- *
- * visible_message will handle invisibility properly
- *
- * overridden here and in /mob/dead/observer for different point span classes and sanity checks
- */
-/mob/verb/pointed(atom/A as mob|obj|turf in view())
-	set name = "Point To"
-	set category = "Object"
-
-	if(istype(A, /obj/effect/temp_visual/point))
-		return FALSE
-
-	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(_pointed), A))
-
-/// possibly delayed verb that finishes the pointing process starting in [/mob/verb/pointed()].
-/// either called immediately or in the tick after pointed() was called, as per the [DEFAULT_QUEUE_OR_CALL_VERB()] macro
-/mob/proc/_pointed(atom/A)
-	if(!src || !isturf(src.loc))
-		return FALSE
-	if(client && !(A in view(client.view, src)))
-		return FALSE
-
-	if(istype(A, /obj/effect/temp_visual/point))
-		return FALSE
-
-	var/tile = get_turf(A)
-	if (!tile)
-		return FALSE
-
-	new /obj/effect/temp_visual/point(src,invisibility)
-	SEND_SIGNAL(src, COMSIG_MOB_POINTED, A)
-
-	return TRUE
-
-/mob/proc/linepoint(atom/A as mob|obj|turf in view(), params)
-	if(world.time < lastpoint + 50)
-		return FALSE
-
-	if(stat)
-		return FALSE
-
-	if(client)
-		if(!src || !isturf(src.loc) || !(A in view(client.view, src)))
-			return FALSE
-
-	var/turf/tile = get_turf(A)
-	if (!tile)
-		return FALSE
-
-	var/turf/our_tile = get_turf(src)
-	var/obj/visual = new /obj/effect/temp_visual/point/still(our_tile, invisibility)
-	SEND_SIGNAL(src, COMSIG_MOB_POINTED, A)
-	animate(visual, pixel_x = (tile.x - our_tile.x) * world.icon_size + A.pixel_x, pixel_y = (tile.y - our_tile.y) * world.icon_size + A.pixel_y, time = 2, easing = EASE_OUT)
-
-	lastpoint = world.time
-	var/obj/I = get_active_held_item()
-	if(I)
-		src.visible_message("<span class='info'>[src] points [I] at [A].</span>", "<span class='info'>I point [I] at [A].</span>")
-	else
-		src.visible_message("<span class='info'>[src] points at [A].</span>", "<span class='info'>I point at [A].</span>")
-
-	return TRUE
-
 ///Can this mob resist (default FALSE)
 /mob/proc/can_resist()
 	return FALSE		//overridden in living.dm
@@ -529,7 +456,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 	set hidden = 1
 	set src = usr
 
-	if(incapacitated(ignore_grab = TRUE))
+	if(incapacitated(IGNORE_GRAB))
 		return
 
 	var/obj/item/I = get_active_held_item()
@@ -543,8 +470,8 @@ GLOBAL_VAR_INIT(mobids, 1)
  * This actually gets the mind datums notes
  */
 /mob/verb/memory()
-	set name = "Notes"
-	set category = "Memory"
+	set name = "Memories"
+	set category = "IC"
 	set desc = ""
 	if(mind)
 		mind.show_memory(src)
@@ -555,8 +482,8 @@ GLOBAL_VAR_INIT(mobids, 1)
  * Add a note to the mind datum
  */
 /mob/verb/add_memory(msg as message)
-	set name = "AddNote"
-	set category = "Memory"
+	set name = "Add Memory"
+	set category = "IC"
 	if(mind)
 		if (world.time < memory_throttle_time)
 			return
@@ -1175,9 +1102,9 @@ GLOBAL_VAR_INIT(mobids, 1)
 	var/turf/mob_location = get_turf(src)
 	var/area/mob_area = get_area(src)
 
-	if(mob_location.get_lumcount() > light_amount)
+	if(mob_location?.get_lumcount() > light_amount)
 		return TRUE
-	else if(mob_area.dynamic_lighting == DYNAMIC_LIGHTING_DISABLED)
+	else if(mob_area?.dynamic_lighting == DYNAMIC_LIGHTING_DISABLED)
 		return TRUE
 
 	return FALSE
@@ -1307,14 +1234,14 @@ GLOBAL_VAR_INIT(mobids, 1)
 
 /mob/proc/adjust_hydration(change)
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
-		nutrition = HYDRATION_LEVEL_FULL
+		hydration = HYDRATION_LEVEL_FULL
 	hydration = max(0, hydration + change)
 	if(hydration > HYDRATION_LEVEL_FULL)
 		hydration = HYDRATION_LEVEL_FULL
 
 /mob/proc/set_hydration(change)
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
-		nutrition = HYDRATION_LEVEL_FULL
+		hydration = HYDRATION_LEVEL_FULL
 	hydration = max(0, change)
 	if(hydration > HYDRATION_LEVEL_FULL)
 		hydration = HYDRATION_LEVEL_FULL
@@ -1347,7 +1274,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 	stat = new_stat
 	SEND_SIGNAL(src, COMSIG_MOB_STATCHANGE, new_stat, .)
 
-/mob/say_mod(input, message_mode)
+/mob/say_mod(input, list/message_mods = list())
 	var/customsayverb = findtext(input, "*")
 	if(customsayverb)
 		return lowertext(copytext(input, 1, customsayverb))

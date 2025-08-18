@@ -56,7 +56,7 @@ GLOBAL_LIST_EMPTY(last_words)
 
 /mob/living/proc/spawn_dust(just_ash = FALSE)
 	for(var/i in 1 to 3)
-		new /obj/item/ash(loc)
+		new /obj/item/fertilizer/ash(loc)
 
 
 /mob/living/death(gibbed)
@@ -109,11 +109,9 @@ GLOBAL_LIST_EMPTY(last_words)
 		if(last_words)
 			GLOB.last_words |= last_words
 
-	for(var/s in ownedSoullinks)
-		var/datum/soullink/S = s
+	for(var/datum/soullink/S as anything in ownedSoullinks)
 		S.ownerDies(gibbed)
-	for(var/s in sharedSoullinks)
-		var/datum/soullink/S = s
+	for(var/datum/soullink/S as anything in sharedSoullinks)
 		S.sharerDies(gibbed)
 
 //	for(var/datum/death_tracker/D in target.death_trackers)

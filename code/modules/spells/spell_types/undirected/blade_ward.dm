@@ -9,12 +9,8 @@
 	cooldown_time = 1 MINUTES
 	spell_cost = 30
 
-	invocation = "Blades, be dulled!"
+	invocation = ""
 	invocation_type = INVOCATION_SHOUT
-
-	attunements = list(
-		/datum/attunement/arcyne = 0.3,
-	)
 
 /datum/action/cooldown/spell/undirected/blade_ward/cast(atom/cast_on)
 	. = ..()
@@ -28,7 +24,6 @@
 			span_notice("I trace a a sigil of warding in the air."),
 		)
 
-	if(attuned_strength < 1.5)
 		return
 
 	for(var/mob/living/extra_target in orange(FLOOR(attuned_strength, 1), owner))

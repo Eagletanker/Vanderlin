@@ -1,6 +1,6 @@
 /datum/action/cooldown/spell/undirected/learn
 	name = "Attempt to learn a new spell"
-	desc = "Weave a new spell"
+	desc = "Recall a spell"
 	button_icon_state = "book1"
 	sound = null
 
@@ -57,7 +57,13 @@
 			qdel(node)
 			return
 
+		// if(cost > user.spell_slots - user.used_spell_slots)
+		// 	to_chat(user, span_warning("You do not have enough spell slots to learn this."))
+		// 	qdel(node)
+		// 	return
+
 		user.used_spell_points += cost
+		user.adjust_spell_points(cost, TRUE)
 		unlocked_spells += spell_type
 
 		if(node.is_passive)
@@ -65,7 +71,7 @@
 			to_chat(user, span_notice("You have learned the passive technique: [node.name]"))
 		else
 			if(node.spell_type)
-				user.add_spell(node.spell_type, silent = FALSE)
+				user.add_spell(node.spell_type, override = TRUE)
 			to_chat(usr, span_notice("You have learned the spell: [node.name]"))
 
 		selected_spell = node

@@ -5,9 +5,6 @@
 	sound = 'sound/magic/haste.ogg'
 
 	point_cost = 2
-	attunements = list(
-		/datum/attunement/earth = 1,
-	)
 	school = SCHOOL_TRANSMUTATION
 
 	charge_time = 4 SECONDS
@@ -15,7 +12,7 @@
 	charge_slowdown = 0.7
 	cooldown_time = 5 MINUTES
 	spell_cost = 60
-
+	spell_flags = SPELL_RITUOS
 	status_effect = /datum/status_effect/buff/guidance
 	duration_scaling = TRUE
 	duration_modification = 30 SECONDS

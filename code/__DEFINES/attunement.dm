@@ -7,7 +7,7 @@
 			to_convert = (-to_convert+1); \
 		} \
 	} \
-// Elements
+// Elements// TODO: Reduce to five or four? Water, Earth, Fire, Air? Water, Fire, Wood, Metal, Earth?
 
 #define MAGIC_ELEMENT_FIRE /datum/attunement/fire
 #define MAGIC_ELEMENT_ICE /datum/attunement/ice

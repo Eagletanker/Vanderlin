@@ -4,10 +4,6 @@
 	button_icon_state = "blindness"
 	sound = 'sound/magic/churn.ogg'
 
-	attunements = list(
-		/datum/attunement/arcyne = 0.1
-	)
-
 	charge_required = FALSE
 	cooldown_time = 2 MINUTES
 	spell_cost = 30

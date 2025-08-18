@@ -4,17 +4,14 @@
 	button_icon = "frostbolt"
 	sound = 'sound/magic/whiteflame.ogg'
 
-	point_cost = 1
-	attunements = list(
-		/datum/attunement/ice = 0.7,
-	)
+	point_cost = 3
 
 	charge_time = 2 SECONDS
 	charge_drain = 1
-	charge_slowdown = 0.7
+	charge_slowdown = 0.2
 	cooldown_time = 20 SECONDS
 	spell_cost = 30
-
+	spell_flags = SPELL_RITUOS
 	projectile_type = /obj/projectile/magic/frostbolt
 
 /datum/action/cooldown/spell/projectile/frost_bolt/cast(atom/cast_on)
@@ -28,9 +25,10 @@
 /obj/projectile/magic/frostbolt
 	name = "frost bolt"
 	icon_state = "ice_2"
-	damage = 25
+	damage = 30
+	armor_penetration = 5
 	damage_type = BURN
-	range = 10
+	range = 12
 	speed = 1
 
 /obj/projectile/magic/frostbolt/on_hit(atom/target, blocked = FALSE, pierce_hit)

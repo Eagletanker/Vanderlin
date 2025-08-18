@@ -8,8 +8,8 @@
 	/// The max amount of targets we can affect via our AOE. 0 = unlimited
 	var/max_targets = 0
 	/// The radius of the aoe.
-	var/aoe_radius = 7
-	/// If each "level" is staggered
+	var/aoe_radius = 1
+	/// If each "level" is staggered. Keep this at one
 	var/staggered = FALSE
 	/// Amount to delay each level's cast by
 	var/stagger_delay = 2 DECISECONDS

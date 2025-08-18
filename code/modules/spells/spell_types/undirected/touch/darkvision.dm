@@ -5,19 +5,13 @@
 	can_cast_on_self = TRUE
 
 	point_cost = 2
-	attunements = list(
-		/datum/attunement/light = 0.6,
-	)
 
 	cooldown_time = 6 MINUTES
 
 	hand_path = /obj/item/melee/touch_attack/darkvision
 	draw_message = "I prepare to grant Darkvision."
 	drop_message = "I release my arcyne focus."
-	charges = 3
-
-/datum/action/cooldown/spell/undirected/touch/darkvision/adjust_hand_charges()
-	charges += FLOOR(attuned_strength * 1.5, 1)
+	charges = 2
 
 /datum/action/cooldown/spell/undirected/touch/darkvision/is_valid_target(atom/cast_on)
 	. = ..()
@@ -30,14 +24,12 @@
 	if(!do_after(caster, 5 SECONDS, victim))
 		return
 
-	var/duration_increase = attuned_strength * 2 MINUTES
-
 	if(victim != caster)
 		caster.visible_message("[caster] draws a glyph in the air and touches [victim] with an arcyne focus.")
 	else
 		caster.visible_message("[caster] draws a glyph in the air and touches themselves with an arcyne focus.")
 
-	victim.apply_status_effect(/datum/status_effect/buff/darkvision, 10 MINUTES + duration_increase)
+	victim.apply_status_effect(/datum/status_effect/buff/darkvision, 15 MINUTES) //its actually half a dae now
 
 /obj/item/melee/touch_attack/darkvision
 	name = "\improper arcyne focus"

@@ -3,23 +3,19 @@
 	desc = "Conjure a magical brick in your hand for 3 minutes. \
 	This spell has been honed over centuries to bypass anti-magic defenses."
 	button_icon_state = "magicians_brick"
-	sound = list('sound/magic/whiteflame.ogg')
+	sound = 'sound/magic/whiteflame.ogg'
 
-	point_cost = 1
+	point_cost = 3
 
 	cooldown_time = 5 SECONDS
 	spell_cost = 30
 
 	invocation = "Valtarem!"
 	invocation_type = INVOCATION_SHOUT
-
+	spell_flags = SPELL_RITUOS
 	item_type = /obj/item/weapon/magicbrick
 	item_duration = 3 MINUTES
 	item_outline = "#6495ED"
-
-	attunements = list(
-		/datum/attunement/earth = 0.3,
-	)
 
 /datum/action/cooldown/spell/undirected/conjure_item/brick/make_item()
 	. = ..()
@@ -31,8 +27,8 @@
 		return
 	var/obj/item/brick = .
 	var/int_scaling = INT - 10
-	brick.force = (brick.force + int_scaling) * attuned_strength
-	brick.throwforce = (brick.throwforce + int_scaling * 2) * attuned_strength // 2x scaling for throwing. Let's go.
+	brick.force = (brick.force + int_scaling)
+	brick.throwforce = (brick.throwforce + int_scaling * 2) // 2x scaling for throwing. Let's go.
 	brick.name = "magician's brick +[int_scaling]"
 	return brick
 
@@ -52,6 +48,6 @@
 	slot_flags = ITEM_SLOT_MOUTH
 	obj_flags = null
 	w_class = WEIGHT_CLASS_TINY
-	possible_item_intents = list(/datum/intent/mace/strike) // Not giving it smash so it don't become competetive with conjure weapon (as a melee weapon)
-	associated_skill = /datum/skill/combat/axesmaces // If it was tied to Arcane it'd be too strong
+	possible_item_intents = list(/datum/intent/mace/strike, datum/intent/mace/smash)
+	associated_skill = /datum/skill/magic/arcane // fuck it lets see how it is live
 	hitsound = list('sound/combat/hits/blunt/brick.ogg')

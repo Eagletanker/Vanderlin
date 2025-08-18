@@ -242,8 +242,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	if(!LAZYLEN(GLOB.ritualslist))
 		GLOB.ritualslist = list()
 		var/static/list/rituals = subtypesof(/datum/ritual)
-		for(var/path in rituals)
-			var/datum/ritual/G = path
+		for(var/datum/ritual/G as anything in rituals)
 			GLOB.ritualslist[G.name] = G
 
 /obj/effect/decal/cleanable/sigil/proc/consume_ingredients(datum/ritual/R)
@@ -429,7 +428,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 /mob/living/carbon/human/proc/draw_sigil()
 	set name = "Draw Sigil"
 	set category = "ZIZO"
-	if(incapacitated(ignore_grab = TRUE) || stat >= UNCONSCIOUS)
+	if(incapacitated(IGNORE_GRAB) || stat >= UNCONSCIOUS)
 		return
 
 	var/list/runes = list("Servantry", "Transmutation", "Fleshcrafting")

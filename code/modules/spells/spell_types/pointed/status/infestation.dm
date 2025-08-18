@@ -7,14 +7,10 @@
 
 	point_cost = 1
 	associated_skill = /datum/skill/magic/druidic
-	attunements = list(
-		/datum/attunement/dark = 0.3,
-		/datum/attunement/death = 0.3,
-	)
 
 	invocation = "Rot, take them!"
 	invocation_type = INVOCATION_SHOUT
-
+	spell_flags = SPELL_RITUOS
 	charge_time = 1 SECONDS
 	cooldown_time = 20 SECONDS
 	spell_cost = 20

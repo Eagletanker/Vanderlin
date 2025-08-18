@@ -11,9 +11,6 @@
 	antimagic_flags = MAGIC_RESISTANCE_HOLY
 	associated_skill = /datum/skill/magic/holy
 	required_items = list(/obj/item/clothing/neck/psycross/silver/dendor)
-	attunements = list(
-		/datum/attunement/earth = 1,
-	)
 
 	invocation = "Be still and calm, brotherbeast."
 	invocation_type = INVOCATION_WHISPER

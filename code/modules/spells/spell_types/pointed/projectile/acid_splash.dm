@@ -5,31 +5,21 @@
 	sound = 'sound/magic/whiteflame.ogg'
 
 	point_cost = 1
-	attunements = list(
-		/datum/attunement/blood = 0.3,
-		/datum/attunement/death = 0.4,
-	)
 
 	charge_time = 3 SECONDS
 	charge_drain = 1
 	charge_slowdown = 0.7
 	cooldown_time = 15 SECONDS
 	spell_cost = 30
-
+	spell_flags = SPELL_RITUOS
 	projectile_type = /obj/projectile/magic/acidsplash
-
-/datum/action/cooldown/spell/projectile/acid_splash/ready_projectile(obj/projectile/magic/acidsplash/to_fire, atom/target, mob/user, iteration)
-	. = ..()
-	to_fire.damage *= attuned_strength
-	to_fire.aoe_range *= attuned_strength
-	to_fire.strength_modifier *= attuned_strength
 
 /obj/projectile/magic/acidsplash
 	name = "acid bubble"
 	icon_state = "acid_splash"
 	damage = 10
 	damage_type = BURN
-	range = 15
+	range = 8
 	speed = 3
 	var/aoe_range = 1
 	var/strength_modifier = 1

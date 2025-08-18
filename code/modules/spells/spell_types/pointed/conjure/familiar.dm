@@ -1,4 +1,4 @@
-/datum/action/cooldown/spell/conjure/familiar
+/datum/action/cooldown/spell/conjure/familiar //add more summons
 	name = "Find Familiar"
 	desc = "Summons a temporary spectral volf to aid you."
 	button_icon_state = "zad"
@@ -13,14 +13,10 @@
 	charge_slowdown = 1.3
 	cooldown_time = 6 MINUTES
 	spell_cost = 30
-
+	spell_flags = SPELL_RITUOS
 	summon_type = list(/mob/living/simple_animal/hostile/retaliate/wolf/familiar)
 	summon_radius = 0
 	summon_lifespan = 5 MINUTES
-
-	attunements = list(
-		/datum/attunement/arcyne = 0.4,
-	)
 
 /datum/action/cooldown/spell/conjure/familiar/post_summon(atom/summoned_object, atom/cast_on)
 	var/mob/living/wolf = summoned_object

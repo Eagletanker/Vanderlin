@@ -6,16 +6,12 @@
 	sound = 'sound/magic/unmagnet.ogg'
 
 	point_cost = 3
-	attunements = list(
-		/datum/attunement/aeromancy = 0.4,
-	)
 
 	charge_time = 3 SECONDS
 	charge_drain = 2
-	charge_slowdown = 0.3
 	cooldown_time = 20 SECONDS
 	spell_cost = 30
-
+	spell_flags = SPELL_RITUOS
 	projectile_type = /obj/projectile/magic/repel
 
 /obj/projectile/magic/repel

@@ -166,8 +166,8 @@
 	weight = 100
 
 /datum/special_trait/arsonist/on_apply(mob/living/carbon/human/character, silent)
-	character.mind.special_items["Firebomb One"] = /obj/item/bomb
-	character.mind.special_items["Firebomb Two"] = /obj/item/bomb
+	character.mind.special_items["Firebomb One"] = /obj/item/explosive/bottle
+	character.mind.special_items["Firebomb Two"] = /obj/item/explosive/bottle
 	character.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
 
 /datum/special_trait/tombraider
@@ -232,6 +232,7 @@
 	character.grant_language(/datum/language/hellspeak)
 	character.grant_language(/datum/language/celestial)
 	character.grant_language(/datum/language/orcish)
+	character.grant_language(/datum/language/deepspeak)
 	character.grant_language(/datum/language/oldpsydonic)
 	character.grant_language(/datum/language/zalad)
 	character.grant_language(/datum/language/thievescant)
@@ -318,7 +319,7 @@
 	name = "Giant"
 	greet_text = span_notice("I've always been called a giant. I am valued for my stature, but, this world made for smaller folk has forced me to move cautiously.")
 	req_text = "Not a kobold or dwarf"
-	restricted_races = list(/datum/species/dwarf/mountain, /datum/species/kobold)
+	restricted_races = list(SPEC_ID_DWARF, SPEC_ID_KOBOLD)
 	weight = 50
 
 /datum/special_trait/backproblems/on_apply(mob/living/carbon/human/character)
@@ -410,7 +411,7 @@
 	weight = 20
 
 /datum/special_trait/outlaw/on_apply(mob/living/carbon/human/character, silent)
-	GLOB.outlawed_players += character.real_name
+	GLOB.outlawed_players |= character.real_name
 
 /datum/special_trait/unlucky
 	name = "Unlucky"
@@ -498,7 +499,7 @@
 	QDEL_NULL(character.beltr)
 	QDEL_NULL(character.backr)
 	QDEL_NULL(character.head)
-	character.equip_to_slot_or_del(new /obj/item/clothing/pants/tights/random(character), ITEM_SLOT_PANTS)
+	character.equip_to_slot_or_del(new /obj/item/clothing/pants/tights/colored/random(character), ITEM_SLOT_PANTS)
 	character.equip_to_slot_or_del(new /obj/item/clothing/armor/chainmail(character), ITEM_SLOT_ARMOR)
 	character.equip_to_slot_or_del(new /obj/item/storage/belt/leather(character), ITEM_SLOT_BELT)
 	character.equip_to_slot_or_del(new /obj/item/storage/belt/pouch/coins/rich(character), ITEM_SLOT_BELT_R)
@@ -527,9 +528,9 @@
 	character.adjust_skillrank(/datum/skill/combat/wrestling, 6, TRUE)
 	character.adjust_skillrank(/datum/skill/combat/unarmed, 6, TRUE)
 	character.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-	character.STASTR = 20
-	character.STACON = 20
-	character.STAEND = 20
+	character.set_stat_modifier("[type]", STATKEY_STR, 20)
+	character.set_stat_modifier("[type]", STATKEY_CON, 20)
+	character.set_stat_modifier("[type]", STATKEY_END, 20)
 
 /datum/special_trait/my_precious
 	name = "My Precious"
@@ -558,27 +559,27 @@
 	character.mind.special_items["Merchant Key"] = /obj/item/key/merchant
 	character.mind.special_items["GOLDFACE Gem"] = /obj/item/gem_device/goldface
 
-/datum/special_trait/thinker
-	name = "The Thinker"
-	greet_text = span_notice("Physique, Endurance, Constitution. The trinity of what builds a great leader and an even greater kingdom... or whatever those nimrods were yapping about! <b>I cast FIREBALL!!!</b>")
-	req_text = "Monarch, worship Noc or Zizo"
-	allowed_patrons = list(/datum/patron/divine/noc, /datum/patron/inhumen/zizo)
-	allowed_jobs = list(/datum/job/lord)
-	weight = 25 //Should be fine.
+// /datum/special_trait/thinker //Commenting it out because mages should *really* not be in this sort of position, nor should they have these stats.
+// 	name = "The Thinker"
+// 	greet_text = span_notice("Physique, Endurance, Constitution. The trinity of what builds a great leader and an even greater kingdom... or whatever those nimrods were yapping about! <b>I cast FIREBALL!!!</b>")
+// 	req_text = "Monarch, worship Noc or Zizo"
+// 	allowed_patrons = list(/datum/patron/divine/noc, /datum/patron/inhumen/zizo)
+// 	allowed_jobs = list(/datum/job/lord)
+// 	weight = 25 //Should be fine.
 
-/datum/special_trait/thinker/on_apply(mob/living/carbon/human/character, silent)
-	character.change_stat("strength", -3)
-	character.change_stat("intelligence", 6)
-	character.change_stat("constitution", -1)
-	character.change_stat("endurance", -1)
-	character.adjust_skillrank(/datum/skill/magic/arcane, 5, TRUE)
-	character.set_skillrank(/datum/skill/combat/swords, 2, TRUE) //Average only.
-	character.adjust_spellpoints(14) //Less points than Court Mage, why do Court mage get 17 points? what even?
-	character.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation, silent = TRUE)
-	character.generate_random_attunements(rand(4,6))
-	character.mana_pool.set_intrinsic_recharge(MANA_ALL_LEYLINES)
-	character.mana_pool.adjust_mana(100) //I don't know, they don't spawn with their full mana bar, so we give them a bit more mana at the start.
-	new /obj/item/book/granter/spellbook/master(get_turf(character))
+// /datum/special_trait/thinker/on_apply(mob/living/carbon/human/character, silent
+// 	character.change_stat("strength", -3)
+// 	character.change_stat("intelligence", 6)
+// 	character.change_stat("constitution", -1)
+// 	character.change_stat("endurance", -1)
+// 	character.adjust_skillrank(/datum/skill/magic/arcane, 5, TRUE)
+// 	character.set_skillrank(/datum/skill/combat/swords, 2, TRUE) //Average only.
+// 	character.adjust_spellpoints(14) //Less points than Court Mage, why do Court mage get 17 points? what even?
+// 	character.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation, silent = TRUE)
+// 	character.generate_random_attunements(rand(4,6))
+// 	character.mana_pool.set_intrinsic_recharge(MANA_ALL_LEYLINES)
+// 	character.mana_pool.adjust_mana(100) //I don't know, they don't spawn with their full mana bar, so we give them a bit more mana at the start.
+// 	new /obj/item/book/granter/spellbook/master(get_turf(character))
 
 /datum/special_trait/skeleton
 	name = "Skeleton"

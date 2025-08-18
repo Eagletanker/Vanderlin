@@ -1,4 +1,4 @@
-/datum/action/cooldown/spell/projectile/blood_bolt
+/datum/action/cooldown/spell/projectile/blood_bolt //vamp only
 	name = "Blood Bolt"
 	desc = "Launch a bolt of blood infused with lightning."
 	button_icon_state = "bloodlightning"
@@ -7,17 +7,13 @@
 	cast_range = 8
 	point_cost = 6
 	associated_skill = /datum/skill/magic/blood
-	attunements = list(
-		/datum/attunement/electric = 0.3,
-		/datum/attunement/blood = 0.7,
-	)
 
 	charge_time = 3 SECONDS
 	charge_drain = 1
 	charge_slowdown = 0.7
 	cooldown_time = 30 SECONDS
 	spell_cost = 40
-
+	spell_flags = SPELL_RITUOS
 	projectile_type = /obj/projectile/magic/bloodlightning
 
 /obj/projectile/magic/bloodlightning

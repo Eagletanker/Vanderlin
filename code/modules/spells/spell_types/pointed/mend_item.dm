@@ -5,10 +5,6 @@
 	sound = 'sound/magic/whiteflame.ogg'
 	self_cast_possible = FALSE
 
-	attunements = list(
-		/datum/attunement/life = 1.2
-	)
-
 	charge_time = 3 SECONDS
 	cooldown_time = 30 SECONDS
 	spell_cost = 40

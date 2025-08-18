@@ -4,9 +4,7 @@
 	button_icon_state = "forcewall"
 
 	point_cost = 3
-	attunements = list(
-		/datum/attunement/illusion = 0.3,
-	)
+
 	school = SCHOOL_TRANSMUTATION
 
 	charge_time = 2 SECONDS
@@ -14,7 +12,7 @@
 	charge_slowdown = 1.3
 	cooldown_time = 35 SECONDS
 	spell_cost = 30
-
+	spell_flags = SPELL_RITUOS
 	var/wall_type = /obj/effect/forcefield/wizard
 
 /datum/action/cooldown/spell/undirected/forcewall/cast(atom/cast_on)

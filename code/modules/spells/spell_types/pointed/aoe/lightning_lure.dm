@@ -6,18 +6,15 @@
 	charge_sound = 'sound/magic/charging_lightning.ogg'
 	click_to_activate = FALSE
 
-	point_cost = 4
-	attunements = list(
-		/datum/attunement/electric = 0.9
-	)
+	point_cost = 7
 
 	charge_time = 2.5 SECONDS
 	charge_drain = 1
 	charge_slowdown = 1.3
-	cooldown_time = 40 MINUTES
+	cooldown_time = 40 SECONDS
 	spell_cost = 45
 
-	aoe_radius = 4
+	aoe_radius = 1
 	max_targets = 3
 
 /datum/action/cooldown/spell/aoe/lightning_lure/is_valid_target(atom/cast_on)

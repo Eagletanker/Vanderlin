@@ -5,15 +5,12 @@
 	cast_range = 15
 	sound = 'sound/magic/magnet.ogg'
 
-	point_cost = 2
-	attunements = list(
-		/datum/attunement/aeromancy = 0.4,
-	)
+	point_cost = 3 //its uh. very good.
 
 	charge_time = 1.5 SECONDS
 	charge_drain = 2
 	charge_slowdown = 0.3
 	cooldown_time = 20 SECONDS
 	spell_cost = 30
-
+	spell_flags = SPELL_RITUOS
 	projectile_type = /obj/projectile/magic/fetch

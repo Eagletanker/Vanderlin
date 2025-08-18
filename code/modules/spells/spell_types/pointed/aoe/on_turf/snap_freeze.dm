@@ -4,13 +4,9 @@
 	button_icon_state = "snapfreeze"
 
 	point_cost = 2
-	attunements = list(
-		/datum/attunement/blood = 0.3,
-		/datum/attunement/ice = 0.4,
-	)
 
-	invocation = "Air be still!"
-	invocation_type = INVOCATION_SHOUT
+	invocation = "snaps their fingers, cold racing through the room!"
+	invocation_type = INVOCATION_EMOTE
 
 	charge_time = 3 SECONDS
 	charge_drain = 2
@@ -18,7 +14,7 @@
 	cooldown_time = 40 SECONDS
 	spell_cost = 45
 
-	aoe_radius = 3
+	aoe_radius = 2
 
 /datum/action/cooldown/spell/aoe/on_turf/snap_freeze/cast_on_thing_in_aoe(turf/victim, atom/caster)
 	new /obj/effect/temp_visual/trapice(victim)
@@ -34,7 +30,7 @@
 			playsound(get_turf(L), 'sound/magic/magic_nulled.ogg', 100)
 			continue
 		L.adjustFireLoss(35)
-		L.apply_status_effect(/datum/status_effect/debuff/frostbite)
+		L.apply_status_effect(/datum/status_effect/debuff/frostbite, null, attuned_strength)
 		to_chat(L, span_userdanger("The air chills your bones!"))
 
 /obj/effect/temp_visual/trapice

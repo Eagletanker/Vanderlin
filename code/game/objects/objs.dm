@@ -69,8 +69,8 @@
 	/// This is depreciated but I don't want to replace it yet
 	var/lockid
 
-	var/lock_sound = 'sound/foley/lock.ogg'
-	var/unlock_sound = 'sound/foley/unlock.ogg'
+	var/lock_sound = 'sound/foley/doors/woodlock.ogg'
+	var/unlock_sound = 'sound/foley/doors/woodlock.ogg'
 	/// Sound we play when a key fails to unlock
 	var/rattle_sound = 'sound/foley/lockrattle.ogg'
 	/// If this is currently being lockpicked
@@ -136,7 +136,7 @@
 	SEND_SIGNAL(src, COMSIG_OBJ_SETANCHORED, anchorvalue)
 	anchored = anchorvalue
 
-/obj/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force)
+/obj/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE)
 	..()
 	if(obj_flags & FROZEN)
 		visible_message("<span class='danger'>[src] shatters into a million pieces!</span>")
@@ -293,7 +293,7 @@
 		to_chat(M, "[V]: <span class='reallybig'>[output]</span>")
 
 	var/choice = input(M,"Warning, you can only reskin [src] once!","Reskin Object") as null|anything in sortList(unique_reskin)
-	if(!QDELETED(src) && choice && !current_skin && !M.incapacitated(ignore_grab = TRUE) && in_range(M,src))
+	if(!QDELETED(src) && choice && !current_skin && !M.incapacitated(IGNORE_GRAB) && in_range(M,src))
 		if(!unique_reskin[choice])
 			return
 		current_skin = choice

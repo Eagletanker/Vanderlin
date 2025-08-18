@@ -6,14 +6,11 @@
 
 	point_cost = 8
 	cast_range = 4
-	attunements = list(
-		/datum/attunement/electric = 0.9
-	)
 
 	charge_time = 3.5 SECONDS
 	charge_drain = 1
 	charge_slowdown = 1.3
-	cooldown_time = 1.5 MINUTES
+	cooldown_time = 120 SECONDS
 	spell_cost = 60
 
 /datum/action/cooldown/spell/sundering_lightning/cast(atom/cast_on)

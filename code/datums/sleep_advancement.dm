@@ -57,6 +57,8 @@
 			return SLEEP_EXP_LEGENDARY
 
 /datum/sleep_adv/proc/enough_sleep_xp_to_advance(skill_type, level_amount)
+	if(level_amount <= 0)
+		return FALSE
 	var/skill_level = mind.current.get_skill_level(skill_type)
 	if(skill_level == SKILL_LEVEL_LEGENDARY)
 		return FALSE
@@ -356,6 +358,7 @@
 	if(mind.has_studied)
 		mind.has_studied = FALSE
 		to_chat(mind.current, span_smallnotice("I feel like I can study my tome again..."))
+	SEND_SIGNAL(mind.current, COMSIG_LIVING_DREAM_END)
 	to_chat(mind.current, span_notice("...and that's all I dreamt of."))
 	close_ui()
 

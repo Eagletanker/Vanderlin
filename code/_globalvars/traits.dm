@@ -134,6 +134,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Anti-Scrying" = TRAIT_ANTISCRYING,
 		"Shock Immunity" = TRAIT_SHOCKIMMUNE,
 		"Expert Herb Finder" = TRAIT_LEGENDARY_ALCHEMIST,
+		"Secret Officiant" = TRAIT_SECRET_OFFICIANT,
 		"Deceiving Meekness" = TRAIT_DECEIVING_MEEKNESS,
 		"Thieves Guild Member" = TRAIT_THIEVESGUILD,
 		"Engineering Goggles" = TRAIT_ENGINEERING_GOGGLES,
@@ -155,13 +156,22 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Loved By Kittens" = TRAIT_KITTEN_MOM,
 		"Waterbreathing" = TRAIT_WATER_BREATHING,
 		"Moonwater Elixir" = TRAIT_MOONWATER_ELIXIR,
+		"Doctorate of the Acryne" = TRAIT_POST_GRADUATE,
+		"Graduate of the Arcyne" = TRAIT_GRADUATE,
+		"Bachlors of the Arcyne" = TRAIT_BACHLOR,
+		"Student of the Arcyne" = TRAIT_ARCYNE_STUDENT,
+		"Violator of the Coven" = TRAIT_VIOLATOR,
+		"Endless Slumber" = TRAIT_TORPOR,
+		"Boundless Energy" = TRAIT_NOENERGY,
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS
 		),
 	/obj/item = list(
 		"TRAIT_NODROP" = TRAIT_NODROP,
-		"TRAIT_NO_TELEPORT" = TRAIT_NO_TELEPORT
+		"TRAIT_NO_TELEPORT" = TRAIT_NO_TELEPORT,
+		"TRAIT_WIELDED" = TRAIT_WIELDED,
+		"TRAIT_NEEDS_TWO_HANDS" = TRAIT_NEEDS_TWO_HANDS,
 		)
 	))
 
@@ -253,7 +263,13 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_KITTEN_MOM = span_info("Kittens love you, they see you are a parent."),
 	TRAIT_FACELESS = span_danger("I am faceless. I am shunned. The others will recognise me for what I am. If I give them the chance."),
 	TRAIT_FLOWERFIELD_IMMUNITY = span_info("I am immune to the effects of flower fields."),
+	TRAIT_SECRET_OFFICIANT = span_love("I am able to conduct secret wedding ceremonies outside of the church. Love cannot be stopped!"),
 	TRAIT_DUALWIELDER = span_info("I am trained in the art of dual wielding."),
+	TRAIT_POST_GRADUATE = span_info("I have a deep understanding of the Arcyne and a post graduate degree in such. I know some of the most powerful spells allowed by Noc"),
+	TRAIT_GRADUATE = span_info("I have a substantial understanding of the Arcyne and a graduate degree in such. I know some of the more advanced spells allowed by Noc"),
+	TRAIT_BACHLOR = span_info("I have a basic understanding of the Arcyne and a degree from a mage's college showing such. I know some of the common spells allowed by Noc"),
+	TRAIT_ARCYNE_STUDENT = span_info("I have been studying the Arcyne for quite a while. I know a few basic spells allowed by Noc."),
+	TRAIT_NOENERGY = span_info("I don't need rest; I won't ever feel fatigue.")
 ))
 
 /// value -> trait name, generated on use from trait_by_type global

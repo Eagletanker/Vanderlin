@@ -5,11 +5,6 @@
 	sound = 'sound/misc/stings/generic.ogg'
 	self_cast_possible = FALSE
 
-	attunements = list(
-		/datum/attunement/dark = 0.4,
-		/datum/attunement/polymorph = 1.2,
-	)
-
 	charge_time = 4 SECONDS
 	charge_drain = 1
 	cooldown_time = 5 MINUTES
