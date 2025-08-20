@@ -559,27 +559,29 @@
 	character.mind.special_items["Merchant Key"] = /obj/item/key/merchant
 	character.mind.special_items["GOLDFACE Gem"] = /obj/item/gem_device/goldface
 
-// /datum/special_trait/thinker //Commenting it out because mages should *really* not be in this sort of position, nor should they have these stats.
-// 	name = "The Thinker"
-// 	greet_text = span_notice("Physique, Endurance, Constitution. The trinity of what builds a great leader and an even greater kingdom... or whatever those nimrods were yapping about! <b>I cast FIREBALL!!!</b>")
-// 	req_text = "Monarch, worship Noc or Zizo"
-// 	allowed_patrons = list(/datum/patron/divine/noc, /datum/patron/inhumen/zizo)
-// 	allowed_jobs = list(/datum/job/lord)
-// 	weight = 25 //Should be fine.
+/*
+ /datum/special_trait/thinker //Commenting it out because mages should *really* not be in this sort of position, nor should they have these stats.
+ 	name = "The Thinker"
+ 	greet_text = span_notice("Physique, Endurance, Constitution. The trinity of what builds a great leader and an even greater kingdom... or whatever those nimrods were yapping about! <b>I cast FIREBALL!!!</b>")
+ 	req_text = "Monarch, worship Noc or Zizo"
+ 	allowed_patrons = list(/datum/patron/divine/noc, /datum/patron/inhumen/zizo)
+ 	allowed_jobs = list(/datum/job/lord)
+ 	weight = 25 //Should be fine.
 
-// /datum/special_trait/thinker/on_apply(mob/living/carbon/human/character, silent
-// 	character.change_stat("strength", -3)
-// 	character.change_stat("intelligence", 6)
-// 	character.change_stat("constitution", -1)
-// 	character.change_stat("endurance", -1)
-// 	character.adjust_skillrank(/datum/skill/magic/arcane, 5, TRUE)
-// 	character.set_skillrank(/datum/skill/combat/swords, 2, TRUE) //Average only.
-// 	character.adjust_spellpoints(14) //Less points than Court Mage, why do Court mage get 17 points? what even?
-// 	character.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation, silent = TRUE)
-// 	character.generate_random_attunements(rand(4,6))
-// 	character.mana_pool.set_intrinsic_recharge(MANA_ALL_LEYLINES)
-// 	character.mana_pool.adjust_mana(100) //I don't know, they don't spawn with their full mana bar, so we give them a bit more mana at the start.
-// 	new /obj/item/book/granter/spellbook/master(get_turf(character))
+ /datum/special_trait/thinker/on_apply(mob/living/carbon/human/character, silent
+ 	character.change_stat("strength", -3)
+ 	character.change_stat("intelligence", 6)
+ 	character.change_stat("constitution", -1)
+ 	character.change_stat("endurance", -1)
+ 	character.adjust_skillrank(/datum/skill/magic/arcane, 5, TRUE)
+ 	character.set_skillrank(/datum/skill/combat/swords, 2, TRUE) //Average only.
+ 	character.adjust_spellpoints(14) //Less points than Court Mage, why do Court mage get 17 points? what even?
+ 	character.add_spell(/datum/action/cooldown/spell/undirected/touch/prestidigitation, silent = TRUE)
+ 	character.generate_random_attunements(rand(4,6))
+ 	character.mana_pool.set_intrinsic_recharge(MANA_ALL_LEYLINES)
+ 	character.mana_pool.adjust_mana(100) //I don't know, they don't spawn with their full mana bar, so we give them a bit more mana at the start.
+ 	new /obj/item/book/granter/spellbook/master(get_turf(character))
+*/
 
 /datum/special_trait/skeleton
 	name = "Skeleton"

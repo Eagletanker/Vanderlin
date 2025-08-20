@@ -156,7 +156,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Loved By Kittens" = TRAIT_KITTEN_MOM,
 		"Waterbreathing" = TRAIT_WATER_BREATHING,
 		"Moonwater Elixir" = TRAIT_MOONWATER_ELIXIR,
-		"Doctorate of the Acryne" = TRAIT_POST_GRADUATE,
+		"Doctorate of the Arcyne" = TRAIT_POST_GRADUATE,
 		"Graduate of the Arcyne" = TRAIT_GRADUATE,
 		"Bachlors of the Arcyne" = TRAIT_BACHLOR,
 		"Student of the Arcyne" = TRAIT_ARCYNE_STUDENT,

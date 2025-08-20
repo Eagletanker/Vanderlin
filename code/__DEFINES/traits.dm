@@ -412,7 +412,9 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_OLDPARTY "Old Party"
 #define TRAIT_EARGRAB "Ear Grab"
 #define TRAIT_FACELESS "Faceless One"
-#define TRAIT_POST_GRADUATE "Doctorate in the Acryne" //Acryne magick traits. you can only use the arcyne if you got one of these.
+
+// ARCYNE MAGIC TRAITS. You can only use the arcyne if you got one of these.
+#define TRAIT_POST_GRADUATE "Doctorate in the Arcyne"
 #define TRAIT_GRADUATE "Graduate of the Arcyne"
 #define TRAIT_BACHLOR "Bachlors of the Arcyne"
 #define TRAIT_ARCYNE_STUDENT "Student of the Arcyne"
